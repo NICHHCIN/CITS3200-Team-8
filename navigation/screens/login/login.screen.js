@@ -2,13 +2,11 @@ import { Formik } from 'formik';
 import React from 'react';
 import { SafeAreaView, View, Image} from 'react-native';
 import { Card, TextInput, Button } from 'react-native-paper';
-import Main from '../../MainContainer';
+import MainContainer from '../../MainContainer';
 import { loginStyle } from './login.style';
 import {loginform} from './login.form'
 
-export const LoginScreen = () => {
-
-  const login = () => Main();
+export default function LoginScreen() {
 
   return (
     <SafeAreaView style={loginStyle.content}>
@@ -22,7 +20,7 @@ export const LoginScreen = () => {
           <Card.Content>
             <Formik
               initialValues={{email:"", password:""}}
-              onSubmit={login}
+              onSubmit={() => {return(<MainContainer/>);}}
               validationScheme={loginform}>
               {({handleSubmit, handleChange}) => (
                 <>
