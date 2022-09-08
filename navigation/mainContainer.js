@@ -13,7 +13,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
 
-export default function App() {
+export default function Main() {
   return (
     <NavigationContainer>
       <Tab.Navigator

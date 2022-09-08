@@ -1,10 +1,15 @@
+import { Formik } from 'formik';
 import React from 'react';
-import { ImageBackground, SafeAreaView, View, Image} from 'react-native';
+import { SafeAreaView, View, Image} from 'react-native';
 import { Card, TextInput, Button } from 'react-native-paper';
+import Main from '../../MainContainer';
 import { loginStyle } from './login.style';
+import {loginform} from './login.form'
 
 export const LoginScreen = () => {
-  const image = require('./assets/bg.jpg');
+
+  const login = () => Main();
+
   return (
     <SafeAreaView style={loginStyle.content}>
       <View style={loginStyle.view}>
@@ -15,14 +20,28 @@ export const LoginScreen = () => {
             style={loginStyle.cardTitle}
           ></Card.Title>  
           <Card.Content>
-            <TextInput label="Email" keyboardType="email-address"></TextInput>
-            <TextInput label="Password" secureTextEntry={true}></TextInput>
-            <Button uppercase={false} style={loginStyle.cardButton}>
-              Forgot Password
-            </Button>
-            <Button mode="contained" style={loginStyle.cardButton}>
-              Login
-            </Button> 
+            <Formik
+              initialValues={{email:"", password:""}}
+              onSubmit={login}
+              validationScheme={loginform}>
+              {({handleSubmit, handleChange}) => (
+                <>
+                  <TextInput label="Email" keyboardType="email-address"
+                    onChangeText={handleChange('email')} testID="email">
+                  </TextInput>
+                  <TextInput label="Password" secureTextEntry={true}
+                    onChangeText={handleChange('password')} testID="password">
+                  </TextInput>
+                  <Button uppercase={false} style={loginStyle.cardButton}>
+                    Forgot Password
+                  </Button>
+                  <Button mode="contained" style={loginStyle.cardButton}
+                    onPress={handleSubmit} testID="login">
+                    Login
+                  </Button>
+                </>
+              )}
+            </Formik>
           </Card.Content>
         </Card>
       </View>

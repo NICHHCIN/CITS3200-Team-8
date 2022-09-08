@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import MainContainer from './navigation/MainContainer';
+import LoginScreen from './navigation/screens/login/login.screen';
 
 export default function App() {
   return (
-    <MainContainer/>
+    <LoginScreen/>
   );
 }
