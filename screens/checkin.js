@@ -20,6 +20,7 @@ export default function CheckInScreen() {
       {checkedIn ? (
 
         <View>
+          {/* <Image source={require('../assets/checkedin.png')} style={styles.icons}/> */}
           <Text style={styles.time}>You Succesfully checked in on: {checkInDate}</Text>
           <Text style={styles.time}>You are currently checked in at: {location}</Text>
           <Text style={styles.time}>You are due to check out on: {expectedcheckout} </Text>
