@@ -2,27 +2,37 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import loginscreen from './screens/loginscreen';
-import Container from './screens/navigator';
+// import Container from './screens/navigator';
 import HomeScreen from './screens/HomeScreen';
 import Emergency from './screens/emergency';
 import CheckInScreen from './screens/checkin';
 const Stack = createNativeStackNavigator()
 
 
-export default function App() {
+function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen options={{ headerShown: false}} name="Login" component={loginscreen} />
-        <Stack.Screen name="Home" component={HomeScreen} /> 
-        <Stack.Screen name = "CheckIn" component = {CheckInScreen} />
-        <Stack.Screen name="Emergency" component={Emergency} />
-        <Stack.Screen name = "navigator" component = {Container} />
+        <Stack.Screen options={{ headerShown: false}} name="Tabs" component={Tabs} />
       </Stack.Navigator>
     </NavigationContainer>
   );
+}
+
+
+const Tab = createBottomTabNavigator()
+function Tabs() {
+  return (
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} /> 
+        <Tab.Screen name = "CheckIn" component = {CheckInScreen} />
+        <Tab.Screen name="Emergency" component={Emergency} />
+      </Tab.Navigator>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -33,3 +43,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default App
