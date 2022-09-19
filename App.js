@@ -9,7 +9,7 @@ import loginscreen from './screens/loginscreen';
 import ProfileScreen from './screens/profilescreen';
 import Emergency from './screens/emergency';
 import CheckInScreen from './screens/checkin';
-import HomeScreen from './screens/homescreen';
+import HomeScreen from './screens/HomeScreen';
 import Policies from './screens/policies';
 const Stack = createNativeStackNavigator()
 
