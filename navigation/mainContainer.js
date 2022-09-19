@@ -1,19 +1,20 @@
 import React, {useState} from 'react';
+import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 //Screens
- import AnnouncementsScreen from './screens/Announcements';
- import CheckInScreen from './screens/CheckIn'
- import EmergencyScreen from './screens/Emergency';
- import GalleryScreen from './screens/Gallery';
- import ProfileScreen from './screens/Profile';
+import AnnouncementsScreen from './screens/Announcements';
+import CheckInScreen from './screens/CheckIn';
+import EmergencyScreen from './screens/Emergency';
+import GalleryScreen from './screens/Gallery';
+import ProfileScreen from './screens/Profile';
 
 const Tab = createBottomTabNavigator();
 
-export default function App() {
+export default function MainContainer() {
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -25,7 +26,7 @@ export default function App() {
               iconName = focused ? 'mail-outline' : 'mail-outline';
             } else if (route.name === 'Gallery') {
               iconName = focused ? 'images-outline' : 'images-outline';
-            } else if (route.name === 'CheckIn/Out') {
+            } else if (route.name === 'CheckIn') {
               iconName = focused ? 'checkbox-outline' : 'checkbox-outline';
             } else if (route.name === 'Emergency') {
               iconName = focused ? 'call-outline' : 'call-outline';
@@ -37,10 +38,10 @@ export default function App() {
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarOptions: {
+            tabBarActiveTintColor: 'tomato',
+            tabBarInactiveTintColor: 'gray',
             showLabel: false
-          },
-          tabBarActiveTintColor: 'tomato',
-          tabBarInactiveTintColor: 'gray',
+          }          
         })}
       >
         <Tab.Screen name="Announcements" component={AnnouncementsScreen} />
