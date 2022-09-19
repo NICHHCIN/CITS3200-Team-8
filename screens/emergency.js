@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button,  Linking } from 'react-native';
+import { Image, StyleSheet, Text, View, Button,  Linking } from 'react-native';
 
 function getAccomodationAddress() {
   var accomodationAddress = "1234 Main St, Kalbarri, WA 6536";
@@ -19,15 +19,16 @@ function getEmergencyMeetingPoint() {
 const Emergency = () => {
     return (
       <View style={styles.container}>
-        <Text style={styles.paragraph}>
+        <Image source = {require('../assets/siren.png')} style = {styles.icons}/>
+        <Text style={styles.paragraph1}>
           Emergency Information
         </Text>
         <Text style={styles.paragraph}>
           Accomodation Address: {getAccomodationAddress()}
         </Text>
-        <Text style={styles.paragraph}>
+        {/* <Text style={styles.paragraph}>
           Emergency Contact: {getEmergencyContact()}
-        </Text>
+        </Text> */}
         <Button title="Call Emergency Contact" onPress={() => Linking.openURL('tel:0412345678')} />
 
         <Text style={styles.paragraph}>
@@ -44,8 +45,29 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: 'red',
+    backgroundColor: '#f0f2f2' ,
     padding: 8,
+  },
+  icons: {
+    width: 200,
+    height: 200,
+    alignSelf: 'center',
+  },
+
+
+  button: {
+    backgroundColor: '',
+    width: '100%',
+    padding: 15,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+
+  paragraph1: {
+    margin: 34,
+    fontSize: 28,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   paragraph: {
     margin: 24,

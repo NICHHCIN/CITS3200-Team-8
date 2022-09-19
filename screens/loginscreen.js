@@ -36,6 +36,8 @@ const LoginScreen = () => {
         const user = userCredentials.user;
         console.log('Logged in with:', user.email);
       })
+      
+      
       .catch(error => alert(error.message))
   }
   return (
@@ -49,6 +51,8 @@ const LoginScreen = () => {
       <Image source = {require('../assets/icon.png')} style = {styles.icons}/>
         <TextInput
           placeholder="Email"
+          //make the text bold
+
           value={email}
           onChangeText={text => setEmail(text)}
           style={styles.input}
@@ -92,6 +96,7 @@ const styles = StyleSheet.create({
     width: '80%'
   },
   input: {
+    color: '#FFA500',
     backgroundColor: 'white',
     paddingHorizontal: 15,
     paddingVertical: 10,
@@ -105,7 +110,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   button: {
-    backgroundColor: '#0782F9',
+    backgroundColor: '#FFA500',
     width: '100%',
     padding: 15,
     borderRadius: 10,

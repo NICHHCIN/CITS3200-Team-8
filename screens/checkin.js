@@ -20,6 +20,7 @@ export default function CheckInScreen() {
       {checkedIn ? (
 
         <View>
+          {/* <Image source={require('../assets/checkedin.png')} style={styles.icons}/> */}
           <Text style={styles.time}>You Succesfully checked in on: {checkInDate}</Text>
           <Text style={styles.time}>You are currently checked in at: {location}</Text>
           <Text style={styles.time}>You are due to check out on: {expectedcheckout} </Text>
@@ -58,7 +59,7 @@ export default function CheckInScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f0f2f2' ,
     alignItems: 'center',
     justifyContent: 'center',
   },
