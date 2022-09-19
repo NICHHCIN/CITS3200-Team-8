@@ -19,7 +19,7 @@ function getEmergencyMeetingPoint() {
 const Emergency = () => {
     return (
       <View style={styles.container}>
-        <Image source = {require('../assets/istockphoto-1073610186-612x612.jpg')} style = {styles.icons}/>
+        <Image source = {require('../assets/siren.png')} style = {styles.icons}/>
         <Text style={styles.paragraph1}>
           Emergency Information
         </Text>
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: 'white',
+    backgroundColor: '#f0f2f2' ,
     padding: 8,
   },
   icons: {
@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
   paragraph1: {
     margin: 34,
     fontSize: 28,
-    fontFamily : 'serif',
     fontWeight: 'bold',
     textAlign: 'center',
   },
