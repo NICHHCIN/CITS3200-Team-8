@@ -6,10 +6,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 
 import loginscreen from './screens/loginscreen';
-import ProfileScreen from './screens/profilescreen';
+import Profile from './screens/profile';
 import Emergency from './screens/emergency';
 import CheckInScreen from './screens/checkin';
-import HomeScreen from './screens/homescreen';
+import HomeScreen from './screens/HomeScreen';
 import Policies from './screens/policies';
 const Stack = createNativeStackNavigator()
 
@@ -65,7 +65,7 @@ function Tabs() {
         <Tab.Screen name = "Policies" component = {Policies} />
         <Tab.Screen name = "CheckIn" component = {CheckInScreen} />
         <Tab.Screen name="Emergency" component={Emergency} />         
-        <Tab.Screen name = "Profile" component = {ProfileScreen} />
+        <Tab.Screen name = "Profile" component = {Profile} />
       </Tab.Navigator>
   )
 }

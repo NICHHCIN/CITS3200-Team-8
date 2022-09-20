@@ -1,4 +1,4 @@
-/* import React from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, Button,  Linking } from 'react-native';
 
 function getUsername() {
@@ -33,8 +33,8 @@ const Profile = () => {
                 accomodation \n
                 checkoutDate
             </Text>
-            {getProfilePicture()}
-            add orange folder details below, link to database?
+            {/* {getProfilePicture()} */}
+            {/* add orange folder details below, link to database? */}
             <Text>
                 Placement Details:
                 <Text>
@@ -56,4 +56,3 @@ const styles = StyleSheet.create({
         fontSize: 15,
     },
 })
- */
