@@ -21,13 +21,37 @@ const App = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
        <ScrollView style={styles.scrollView}>
+       <Text style={styles.buttonTextStyle13}>
+          
+          </Text>
+          <Text style={styles.buttonTextStyle13}>
+          
+          </Text>
+
+       <Text style={styles.buttonTextStyle13}>
+          Completed
+
+          </Text>
+
+          <Text style={styles.buttonTextStyle13}>
+          
+          </Text>
+          <Text style={styles.buttonTextStyle13}>
+          
+          </Text>
+          <Text style={styles.buttonTextStyle13}>
+          Pending
+          </Text>
       <View style={styles.container}>
-        
+     
+
 
         <TouchableOpacity
           style={styles.buttonGPlusStyle}
           activeOpacity={0.5}
-          onPress={() => OpenAnything.Pdf('https://drive.google.com/file/d/1UWIbtXo1oRLTQj7wf8O2BsbVp9aHbVRa/view?usp=sharing')}>
+          onPress={() => OpenAnything.Pdf('https://drive.google.com/file/d/1UWIbtXo1oRLTQj7wf8O2BsbVp9aHbVRa/view?usp=sharing')}
+          
+          >
           <Image
             source={require('../assets/emerg.png')}
             style={styles.buttonImageIconStyle}
@@ -310,11 +334,19 @@ const App = () => {
 
 
 const styles = StyleSheet.create({
+
+  buttonTextStyle13: {
+    fontSize: 27,
+    fontWeight: "bold",
+    textAlign:'left',
+    marginLeft: "4%"
+  },
+
   container: {
     flex: 1,
     margin: 10,
-    marginTop: 30,
-    padding: 30,
+    marginTop: 10,
+    padding: 20,
   },
   buttonGPlusStyle: {
     flexDirection: 'row',
