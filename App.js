@@ -11,6 +11,8 @@ import Emergency from './screens/emergency';
 import CheckInScreen from './screens/checkin';
 import HomeScreen from './screens/HomeScreen';
 import Policies from './screens/policies';
+import App1 from './screens/popart1';
+
 const Stack = createNativeStackNavigator()
 
 
@@ -20,6 +22,7 @@ function App() {
       <Stack.Navigator>
         <Stack.Screen options={{ headerShown: false}} name="Login" component={loginscreen} />
         <Stack.Screen options={{ headerShown: false}} name="Tabs" component={Tabs} />
+        <Stack.Screen options={{ headerShown: false}} name = "PSpart1" component = {App1} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -66,6 +69,7 @@ function Tabs() {
         <Tab.Screen name = "CheckIn" component = {CheckInScreen} />
         <Tab.Screen name="Emergency" component={Emergency} />         
         <Tab.Screen name = "Profile" component = {ProfileScreen} />
+        
       </Tab.Navigator>
   )
 }

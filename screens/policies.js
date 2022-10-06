@@ -1,9 +1,11 @@
+
+
 //Image Icon Inside the React Native Button
 //https://aboutreact.com/image-icon-inside-the-react-native-button/
  
 //import React in our code
 import React from 'react';
- 
+import { useNavigation } from '@react-navigation/core'
 //import all the components we are going to use
 import {
   SafeAreaView,
@@ -15,37 +17,135 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
+
+
+
 import * as OpenAnything from "react-native-openanything";
+
+
+
+
+
  
 const App = () => {
+  const navigation = useNavigation()
   return (
     <SafeAreaView style={{flex: 1}}>
        <ScrollView style={styles.scrollView}>
-       <Text style={styles.buttonTextStyle13}>
-          
-          </Text>
-          <Text style={styles.buttonTextStyle13}>
-          
-          </Text>
-
-       <Text style={styles.buttonTextStyle13}>
-          Completed
-
-          </Text>
-
-          <Text style={styles.buttonTextStyle13}>
-          
-          </Text>
-          <Text style={styles.buttonTextStyle13}>
-          
-          </Text>
-          <Text style={styles.buttonTextStyle13}>
-          Pending
-          </Text>
+       
       <View style={styles.container}>
      
+      <TouchableOpacity
+          style={styles.buttonGPlusStyle}
+          activeOpacity={0.5}
+          onPress={() => navigation.replace("PSpart1")}
+          
+          >
+          <Image
+            source={require('../assets/folder.png')}
+            style={styles.buttonImageIconStyle}
+          />
+          <View style={styles.buttonIconSeparatorStyle} />
+          <Text style={styles.buttonTextStyle}>
+          EMERGENCY 
+          </Text>
+        </TouchableOpacity>
 
 
+
+
+        <TouchableOpacity
+          style={styles.buttonFacebookStyle}
+          activeOpacity={0.5} 
+          onPress={() => OpenAnything.Pdf('https://drive.google.com/file/d/1X2v1_fYHMQJsfkhOzQpfhZqxxagyV_wT/view?usp=sharing')}>
+          <Image
+            source={require('../assets/folder.png')}
+            style={styles.buttonImageIconStyle}
+          />
+          <View style={styles.buttonIconSeparatorStyle} />
+          <Text style={styles.buttonTextStyle}>
+          WELCOME
+          </Text>
+        </TouchableOpacity>
+
+
+
+
+
+        <TouchableOpacity
+          style={styles.buttonFacebookStyle2}
+          activeOpacity={0.5}>
+          <Image
+            source={require('../assets/folder.png')}
+            style={styles.buttonImageIconStyle}
+          />
+          <View style={styles.buttonIconSeparatorStyle} />
+          <Text style={styles.buttonTextStyle}>
+          ACCOMMODATION POLICIES
+          </Text>
+        </TouchableOpacity>
+
+
+        <TouchableOpacity
+          style={styles.buttonFacebookStyle4}
+          activeOpacity={0.5}>
+          <Image
+            source={require('../assets/folder.png')}
+            style={styles.buttonImageIconStyle}
+          />
+          <View style={styles.buttonIconSeparatorStyle} />
+          <Text style={styles.buttonTextStyle}>
+          PROCEDURES 
+          </Text>
+        </TouchableOpacity>
+
+
+
+        <TouchableOpacity
+          style={styles.buttonFacebookStyle3}
+          activeOpacity={0.5}>
+          <Image
+            source={require('../assets/folder.png')}
+            style={styles.buttonImageIconStyle}
+          />
+          <View style={styles.buttonIconSeparatorStyle} />
+          <Text style={styles.buttonTextStyle}>
+          IMPORTANT INFORMATION 
+          </Text>
+        </TouchableOpacity>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{/* 
         <TouchableOpacity
           style={styles.buttonGPlusStyle}
           activeOpacity={0.5}
@@ -296,7 +396,7 @@ const App = () => {
 
 
 
-
+ */}
 
 
 
@@ -354,7 +454,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#dc4e41',
     borderWidth: 0.5,
     borderColor: '#fff',
-    height: 40,
+    height: 110,
     borderRadius: 18 ,
     margin: 5,
   },
@@ -364,7 +464,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#0EC310',
     borderWidth: 0.5,
     borderColor: '#fff',
-    height: 40,
+    height: 110,
     borderRadius: 18,
     margin: 5,
   },
@@ -372,20 +472,21 @@ const styles = StyleSheet.create({
 
   buttonImageIconStyle: {
     padding: 10,
-    margin: 5,
-    height: 25,
+    margin: 25,
+    height: 60,
     width: 25,
     resizeMode: 'stretch',
   },
   buttonTextStyle: {
     color: '#fff',
     marginBottom: 4,
-    marginLeft: 10,
+    marginLeft: 15,
+    fontSize: 18,
   },
   buttonIconSeparatorStyle: {
     backgroundColor: '#fff',
-    width: 1,
-    height: 40,
+    width: 2,
+    height: 110,
   },
 
 
@@ -395,7 +496,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#0168a8',
     borderWidth: 0.5,
     borderColor: '#fff',
-    height: 40,
+    height: 110,
     borderRadius: 18,
     margin: 5,
   },
@@ -407,7 +508,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#2196f3',
     borderWidth: 0.5,
     borderColor: '#fff',
-    height: 40,
+    height: 110,
     borderRadius: 18,
     margin: 5,
   },
@@ -418,7 +519,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#969696',
     borderWidth: 0.5,
     borderColor: '#fff',
-    height: 40,
+    height: 110,
     borderRadius: 18,
     margin: 5,
   },
