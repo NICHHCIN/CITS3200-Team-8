@@ -1,4 +1,4 @@
-/* import React from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, Button,  Linking } from 'react-native';
 
 function getUsername() {
@@ -56,4 +56,3 @@ const styles = StyleSheet.create({
         fontSize: 15,
     },
 })
- */

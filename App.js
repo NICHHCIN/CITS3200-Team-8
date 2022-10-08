@@ -11,6 +11,7 @@ import Emergency from './screens/emergency';
 import CheckInScreen from './screens/checkin';
 import HomeScreen from './screens/homescreen';
 import Policies from './screens/policies';
+import AnnouncementsScreen from './screens/announcementsscreen';
 const Stack = createNativeStackNavigator()
 
 
@@ -62,6 +63,7 @@ function Tabs() {
       >
 
         <Tab.Screen name = "Home" component = {HomeScreen} />
+        <Tab.Screen name = "Announcements" component = {AnnouncementsScreen} />
         <Tab.Screen name = "Policies" component = {Policies} />
         <Tab.Screen name = "CheckIn" component = {CheckInScreen} />
         <Tab.Screen name="Emergency" component={Emergency} />         

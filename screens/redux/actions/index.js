@@ -22,7 +22,7 @@ export function getAnnouncements() {
         firebase.firestore()
         .collection("locations")
         .doc(firebase.auth().currentLocation)
-        .collection("cloud messaging")
+        .collection("Announcements")
         .orderBy("date","asc")
         .get()
         .then((snapshot) => {

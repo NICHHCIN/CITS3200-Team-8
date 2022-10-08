@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import {StyleSheet, View, Text, Image, FlatList} from 'react-native'
-import firebase from 'firebase'
+import {StyleSheet, View, Text, FlatList} from 'react-native'
 require('firebase/firestore')
 
-function Screen() {
+export default function AnnouncementsScreen() {
     const [announcements, postAnnouncements] = useState([]);
     useEffect(() => {
         announcements = [...announcements];
@@ -15,15 +14,12 @@ function Screen() {
                 <FlatList
                     numColumns={1}
                     horizontal={false}
-                    data={posts}
+                    data={announcements}
                     renderItem={({ item }) => (
                         <View
                             style={styles.containerImage}>
-                            <Text style={styles.container}>{item.user.name}</Text>
-                            <Image
-                                style={styles.image}
-                                source={{ uri: item.downloadURL }}
-                            />
+                            <Text style={styles.container}>{item.date}</Text>
+                            <Text style={styles.container}>{item.Announcement}</Text>
                         </View>
 
                     )}
@@ -54,4 +50,3 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1
     }
 })
-export default (Screen);
