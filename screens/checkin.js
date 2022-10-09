@@ -1,5 +1,7 @@
 import { StyleSheet, Text, View, Button, ImageBackground} from 'react-native';
 import React, {useState} from 'react';
+import styles from './styles/checkin.style';
+import Ionicons from 'react-native-vector-icons/Ionicons';
   
 export default function CheckInScreen() {
   const [checkedIn, setCheckedIn] = useState(false);
@@ -16,16 +18,18 @@ export default function CheckInScreen() {
     <View style={styles.container}>
       {/* <ImageBackground source={require('../assets/background.png')} resizeMode="cover" style={styles.image}> */}
       <Text style={styles.title}>Check In/Out</Text>
-      <Text style={styles.name}>{name}</Text>
+      <Text style={styles.bodyText}>{name}</Text>
       {checkedIn ? (
 
         <View>
           {/* <Image source={require('../assets/checkedin.png')} style={styles.icons}/> */}
-          <Text style={styles.time}>You Succesfully checked in on: {checkInDate}</Text>
-          <Text style={styles.time}>You are currently checked in at: {location}</Text>
-          <Text style={styles.time}>You are due to check out on: {expectedcheckout} </Text>
+          <Ionicons style={styles.checkmark} name={'checkmark-circle'} color={'#27D676'}/>
+          <Text style={styles.bodyText}>You Succesfully checked in on: <Text style={styles.boldText}>{checkInDate}</Text></Text>
+          <Text style={styles.bodyText}>You are currently checked in at: <Text style={styles.boldText}>{location}</Text></Text>
+          <Text style={styles.bodyText}>You are due to check out on: <Text style={styles.boldText}>{expectedcheckout} </Text></Text>
           <Button
-            color = "red"
+            style={styles.button}
+            color = "#C1C1C1"
             title="Check Out"
             onPress={() => {
               setCheckedIn(false);
@@ -39,8 +43,11 @@ export default function CheckInScreen() {
         </View>
       ) : (
         <View>
-          <Text style={styles.time}>Checked Out: {checkOutDate}</Text>
-          <Button color="green" 
+          <Ionicons style={styles.checkmark} name={'checkmark-circle'} color={'#F15454'}/>
+          <Text style={styles.bodyText}>Checked Out: <Text style={styles.boldText}>{checkOutDate}</Text></Text>
+          <Button 
+            style={styles.button}
+            color="#27D676" 
 
             title="Check In"
 
@@ -56,39 +63,3 @@ export default function CheckInScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f0f2f2' ,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-
-
-  name: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-
-  time: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
-
-  image: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    width: "100%",
-    height: "100%",
-  },
-
-}
-);
