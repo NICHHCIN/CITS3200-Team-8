@@ -6,25 +6,6 @@ require('firebase/firestore')
 export function getAnnouncements() {
     return ((dispatch) => {
         firebase.firestore()
-        .collection('locations')
-        .doc('Geraldton')
-        .collection('Announcements')
-        .orderBy("date","asc")
-        .get()
-        .then((snapshot) => {
-            let announcements = snapshot.docs.map(doc => {
-                const data = doc.data();
-                const id = doc.id;
-                return {id, ...data}
-            })
-            dispatch({type:ChangeAnnouncements,announcements})
-        })
-    })
-}
-
-/*export function getAnnouncements() {
-    return ((dispatch) => {
-        firebase.firestore()
         .collection('users')
         .doc(firebase.auth().currentUser.uid)
         .get()
@@ -45,4 +26,4 @@ export function getAnnouncements() {
             })
         })
     })
-}*/
+}
