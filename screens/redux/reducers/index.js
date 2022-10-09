@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux'
-import {location} from './location'
+import {announcements} from './announcements'
 
 const Reducers = combineReducers({
-    locationState: location
+    announcementsState: announcements
 })
 
 export default Reducers

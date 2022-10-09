@@ -1,67 +1,66 @@
-import React, {useState} from 'react';
+import React, {Component} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { getAnnouncements, getLocation } from '../redux/actions/index'
+import { getAnnouncements } from './redux/actions';
 
-//Screens
-//  import AnnouncementsScreen from './screens/Announcements';
-//  import CheckInScreen from './screens/CheckIn'
-//  import EmergencyScreen from './screens/Emergency';
-import HomeScreen from './HomeScreen';
+import Profile from './profilescreen' 
 import Emergency from './emergency';
-//  import GalleryScreen from './screens/Gallery';
-//  import ProfileScreen from './screens/Profile';
+import CheckInScreen from './checkin';
+import HomeScreen from './homescreen';
+import Policies from './policies';
+import announcementsscreen from './announcementsscreen';
 
 const Tab = createBottomTabNavigator();
 export class Main extends Component {
   componentDidMount() {
     this.props.getAnnouncements;
-    this.props.getLocation;
   }
   render() {
     return (
-      <NavigationContainer>
-        <Tab.Navigator
-          screenOptions={({ route }) => ({
-            tabBarIcon: ({ focused, color, size }) => {
-              let iconName;
+      <Tab.Navigator
+        screenOptions={
+          ({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
 
-              if (route.name === 'Home') {
-                iconName = focused ? 'mail-outline' : 'mail-outline';
-              // } else if (route.name === 'Gallery') {
-              //   iconName = focused ? 'images-outline' : 'images-outline';
-              // } else if (route.name === 'CheckIn/Out') {
-              //   iconName = focused ? 'checkbox-outline' : 'checkbox-outline';
-              } else if (route.name === 'Emergency') {
-                iconName = focused ? 'call-outline' : 'call-outline';
-              // } else if (route.name === 'Profile') {
-              //   iconName = focused ? 'person-circle-outline' : 'person-circle-outline';
-              }
+            if (route.name === 'Home') {
+              iconName = focused ? 'home-sharp' : 'home-outline';
+            } else if (route.name === 'Emergency') {
+              iconName = focused ? 'call-sharp' : 'call-outline';
+            } else if (route.name === 'CheckIn') {
+              iconName = focused ? 'toggle-sharp' : 'toggle-outline';
+            } else if (route.name === 'Profile') {
+              iconName = focused ? 'person-circle-sharp' : 'person-circle-outline';
+            } else if (route.name === 'Policies') {
+              iconName = focused ? 'book-sharp' : 'book-outline';
+            } 
 
-              // You can return any component that you like here!
-              return <Ionicons name={iconName} size={size} color={color} />;
-            },
-            tabBarOptions: {
-              showLabel: false
-            },
-            tabBarActiveTintColor: 'tomato',
-            tabBarInactiveTintColor: 'gray',
-          })}
-        >
-          {/* <Tab.Screen name="Announcements" component={AnnouncementsScreen} /> */}
-          {/* <Tab.Screen name="Gallery" component={GalleryScreen} /> */}
-          {/* <Tab.Screen name="CheckIn/Out" component={CheckInScreen} /> */}
-          <Tab.Screen name="Home" component={HomeScreen} />
-          <Tab.Screen name="Emergency" component={Emergency} />
-          
-        </Tab.Navigator>
-      </NavigationContainer>
-    );
-  }
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          tabBarOptions: {
+            showLabel: false
+          },
+          tabBarActiveTintColor: 'tomato',
+          tabBarInactiveTintColor: 'gray',
+          tabBarStyle : { backgroundColor : 'black'},
+        })
+        
+        }
+      >
+
+        <Tab.Screen name = "Home" component = {HomeScreen} />
+        <Tab.Screen name = "Announcements" component = {announcementsscreen} />
+        <Tab.Screen name = "Policies" component = {Policies} />
+        <Tab.Screen name = "CheckIn" component = {CheckInScreen} />
+        <Tab.Screen name="Emergency" component={Emergency} />         
+        <Tab.Screen name = "Profile" component = {Profile} />
+      </Tab.Navigator>
+  )
+}
 }
 const styles = StyleSheet.create({
   container: {
@@ -69,14 +68,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  }
+  },
 });
 
 
-const mapStatetoProps = (store) => ({
-  currentLocation: store.locationState.currentLocation
+const mapStateToProps = (store) => ({
+  announcements: store.announcementsState.announcements
 })
 
-const mapDispatchProps = (dispatch) => bindActionCreators({getLocation, getAnnouncements},dispatch);
+const mapDispatchProps = (dispatch) => bindActionCreators({getAnnouncements},dispatch);
 
 export default connect(mapStateToProps, mapDispatchProps)(Main);

@@ -1,84 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons'
+
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import Reducers from './screens/redux/reducers'
+import thunk from 'redux-thunk'
+const store = createStore(Reducers, applyMiddleware(thunk))
 
 import loginscreen from './screens/loginscreen';
-import ProfileScreen from './screens/profilescreen';
-import Emergency from './screens/emergency';
-import CheckInScreen from './screens/checkin';
-import HomeScreen from './screens/homescreen';
-import Policies from './screens/policies';
-import AnnouncementsScreen from './screens/announcementsscreen';
+import { Main } from './screens/navigator';
+
 const Stack = createNativeStackNavigator()
 
-
 function App() {
+  
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen options={{ headerShown: false}} name="Login" component={loginscreen} />
-        <Stack.Screen options={{ headerShown: false}} name="Tabs" component={Tabs} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen options={{ headerShown: false}} name="Login" component={loginscreen} />
+          <Stack.Screen options={{ headerShown: false}} name="Main" component={Main} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
-
-
-const Tab = createBottomTabNavigator()
-function Tabs() {
-  return (
-      <Tab.Navigator
-        screenOptions={
-          ({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
-
-            if (route.name === 'Home') {
-              iconName = focused ? 'home-sharp' : 'home-outline';
-            } else if (route.name === 'Emergency') {
-              iconName = focused ? 'call-sharp' : 'call-outline';
-            } else if (route.name === 'CheckIn') {
-              iconName = focused ? 'toggle-sharp' : 'toggle-outline';
-            } else if (route.name === 'Profile') {
-              iconName = focused ? 'person-circle-sharp' : 'person-circle-outline';
-            } else if (route.name === 'Policies') {
-              iconName = focused ? 'book-sharp' : 'book-outline';
-            } 
-
-            // You can return any component that you like here!
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
-          tabBarOptions: {
-            showLabel: false
-          },
-          tabBarActiveTintColor: 'tomato',
-          tabBarInactiveTintColor: 'gray',
-          tabBarStyle : { backgroundColor : 'black'},
-        })
-        
-        }
-      >
-
-        <Tab.Screen name = "Home" component = {HomeScreen} />
-        <Tab.Screen name = "Announcements" component = {AnnouncementsScreen} />
-        <Tab.Screen name = "Policies" component = {Policies} />
-        <Tab.Screen name = "CheckIn" component = {CheckInScreen} />
-        <Tab.Screen name="Emergency" component={Emergency} />         
-        <Tab.Screen name = "Profile" component = {ProfileScreen} />
-      </Tab.Navigator>
-  )
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default App
