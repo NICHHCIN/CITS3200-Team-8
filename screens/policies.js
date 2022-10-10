@@ -57,7 +57,7 @@ const App = () => {
         <TouchableOpacity
           style={styles.buttonFacebookStyle}
           activeOpacity={0.5} 
-          onPress={() => OpenAnything.Pdf('https://drive.google.com/file/d/1X2v1_fYHMQJsfkhOzQpfhZqxxagyV_wT/view?usp=sharing')}>
+          onPress={() => navigation.replace("PSpart2")} >
           <Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
@@ -74,7 +74,8 @@ const App = () => {
 
         <TouchableOpacity
           style={styles.buttonFacebookStyle2}
-          activeOpacity={0.5}>
+          activeOpacity={0.5}
+          onPress={() => navigation.replace("PSpart3")} >
           <Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
@@ -88,7 +89,8 @@ const App = () => {
 
         <TouchableOpacity
           style={styles.buttonFacebookStyle4}
-          activeOpacity={0.5}>
+          activeOpacity={0.5}
+          onPress={() => navigation.replace("PSpart4")} >
           <Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
@@ -103,7 +105,8 @@ const App = () => {
 
         <TouchableOpacity
           style={styles.buttonFacebookStyle3}
-          activeOpacity={0.5}>
+          activeOpacity={0.5}
+          onPress={() => navigation.replace("PSpart5")} >
           <Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}

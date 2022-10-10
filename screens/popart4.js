@@ -26,7 +26,15 @@ const App = () => {
        
       <View style={styles.container}>
      
+      <Text style={styles.buttonTextStyle13}>
+          Files
 
+          </Text>
+          <Text >
+          {'\n'}
+
+          </Text>
+          
       <TouchableOpacity
           style={styles.buttonFacebookStyle4}
           activeOpacity={0.5}>

@@ -26,8 +26,14 @@ const App1 = () => {
        
       <View style={styles.container}>
      
+      <Text style={styles.buttonTextStyle13}>
+          Files
 
+          </Text>
+          <Text >
+          {'\n'}
 
+          </Text>
         <TouchableOpacity
           style={styles.buttonGPlusStyle}
           activeOpacity={0.5}

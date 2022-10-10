@@ -25,7 +25,14 @@ const App = () => {
        <ScrollView style={styles.scrollView}>
        
       <View style={styles.container}>
-     
+      <Text style={styles.buttonTextStyle13}>
+          Files
+
+          </Text>
+          <Text >
+          {'\n'}
+
+          </Text>
 
       <TouchableOpacity
           style={styles.buttonFacebookStyle3}

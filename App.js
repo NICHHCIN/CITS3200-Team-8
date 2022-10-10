@@ -11,8 +11,12 @@ import Emergency from './screens/emergency';
 import CheckInScreen from './screens/checkin';
 import HomeScreen from './screens/HomeScreen';
 import Policies from './screens/policies';
+//import App1 from './navigation/screens/Gallery';
 import App1 from './screens/popart1';
-
+import App2 from './screens/popart2';
+import App3 from './screens/popart3';
+import App4 from './screens/popart4';
+import App5 from './screens/popart5';
 const Stack = createNativeStackNavigator()
 
 
@@ -23,6 +27,10 @@ function App() {
         <Stack.Screen options={{ headerShown: false}} name="Login" component={loginscreen} />
         <Stack.Screen options={{ headerShown: false}} name="Tabs" component={Tabs} />
         <Stack.Screen options={{ headerShown: false}} name = "PSpart1" component = {App1} />
+        <Stack.Screen options={{ headerShown: false}} name = "PSpart2" component = {App2} />
+        <Stack.Screen options={{ headerShown: false}} name = "PSpart3" component = {App3} />
+        <Stack.Screen options={{ headerShown: false}} name = "PSpart4" component = {App4} />
+        <Stack.Screen options={{ headerShown: false}} name = "PSpart5" component = {App5} />
       </Stack.Navigator>
     </NavigationContainer>
   );
