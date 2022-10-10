@@ -6,6 +6,7 @@
 //import React in our code
 import React from 'react';
 import { useNavigation } from '@react-navigation/core'
+import Ionicons from 'react-native-vector-icons/Ionicons';
 //import all the components we are going to use
 import {
   SafeAreaView,
@@ -41,10 +42,11 @@ const App = () => {
           onPress={() => navigation.replace("PSpart1")}
           
           >
-          <Image
+          {/*<Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
-          />
+          />*/}
+          <Ionicons style={styles.buttonImageIconStyle} name={"folder"} color={'#FFFFFF'}/>
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
           EMERGENCY 
@@ -58,10 +60,11 @@ const App = () => {
           style={styles.buttonFacebookStyle}
           activeOpacity={0.5} 
           onPress={() => OpenAnything.Pdf('https://drive.google.com/file/d/1X2v1_fYHMQJsfkhOzQpfhZqxxagyV_wT/view?usp=sharing')}>
-          <Image
+          {/*<Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
-          />
+          />*/}
+          <Ionicons style={styles.buttonImageIconStyle} name={"folder"} color={'#FFFFFF'}/>
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
           WELCOME
@@ -75,13 +78,14 @@ const App = () => {
         <TouchableOpacity
           style={styles.buttonFacebookStyle2}
           activeOpacity={0.5}>
-          <Image
+          {/*<Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
-          />
+          />*/}
+          <Ionicons style={styles.buttonImageIconStyle} name={"folder"} color={'#FFFFFF'}/>
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
-          ACCOMMODATION POLICIES
+          ACCOMMODATION {'\n'}POLICIES
           </Text>
         </TouchableOpacity>
 
@@ -89,10 +93,12 @@ const App = () => {
         <TouchableOpacity
           style={styles.buttonFacebookStyle4}
           activeOpacity={0.5}>
+          {/*}
           <Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
-          />
+          />*/}
+          <Ionicons style={styles.buttonImageIconStyle} name={"folder"} color={'#FFFFFF'}/>
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
           PROCEDURES 
@@ -104,13 +110,14 @@ const App = () => {
         <TouchableOpacity
           style={styles.buttonFacebookStyle3}
           activeOpacity={0.5}>
-          <Image
+          {/*<Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
-          />
+          />*/}
+          <Ionicons style={styles.buttonImageIconStyle} name={"folder"} color={'#FFFFFF'}/>
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
-          IMPORTANT INFORMATION 
+          IMPORTANT {'\n'}INFORMATION 
           </Text>
         </TouchableOpacity>
 
@@ -451,17 +458,18 @@ const styles = StyleSheet.create({
   buttonGPlusStyle: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#dc4e41',
+    backgroundColor: '#b0e3ed',
     borderWidth: 0.5,
     borderColor: '#fff',
     height: 110,
     borderRadius: 18 ,
     margin: 5,
+    marginTop: 20,
   },
   buttonFacebookStyle: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#0EC310',
+    backgroundColor: '#61a1b8',
     borderWidth: 0.5,
     borderColor: '#fff',
     height: 110,
@@ -471,29 +479,29 @@ const styles = StyleSheet.create({
 
 
   buttonImageIconStyle: {
-    padding: 10,
+    padding: 5,
     margin: 25,
-    height: 60,
-    width: 25,
-    resizeMode: 'stretch',
+    fontSize: 30,
+    //resizeMode: 'stretch',
   },
   buttonTextStyle: {
     color: '#fff',
     marginBottom: 4,
     marginLeft: 15,
     fontSize: 18,
+    fontWeight: 'bold',
   },
   buttonIconSeparatorStyle: {
     backgroundColor: '#fff',
     width: 2,
-    height: 110,
+    height: 90,
   },
 
 
   buttonFacebookStyle2: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#0168a8',
+    backgroundColor: '#155375',
     borderWidth: 0.5,
     borderColor: '#fff',
     height: 110,
@@ -505,7 +513,7 @@ const styles = StyleSheet.create({
   buttonFacebookStyle3: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#2196f3',
+    backgroundColor: '#e9862f',
     borderWidth: 0.5,
     borderColor: '#fff',
     height: 110,
@@ -516,7 +524,7 @@ const styles = StyleSheet.create({
   buttonFacebookStyle4: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#969696',
+    backgroundColor: '#edac3b',
     borderWidth: 0.5,
     borderColor: '#fff',
     height: 110,

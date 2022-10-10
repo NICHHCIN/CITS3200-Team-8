@@ -41,8 +41,8 @@ const Container = () => {
           tabBarOptions: {
             showLabel: false
           },
-          tabBarActiveTintColor: 'tomato',
-          tabBarInactiveTintColor: 'gray',
+          tabBarActiveTintColor: 'white',
+          tabBarInactiveTintColor: 'white',
         })}
       >
         {/* <Tab.Screen name="Announcements" component={AnnouncementsScreen} /> */}

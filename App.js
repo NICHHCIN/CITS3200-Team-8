@@ -15,11 +15,23 @@ import App1 from './screens/popart1';
 
 const Stack = createNativeStackNavigator()
 
+const MyTheme = {
+  dark: false,
+  colors: {
+    primary: '#ffa74f',
+    background: '#FFFFFF',
+    card: '#ff962b',
+    text: '#FFFFFF',
+    border: 'rgb(199, 199, 204)',
+    notification: 'rgb(255, 69, 58)',
+  },
+};
 
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
+    <NavigationContainer theme={MyTheme}>
+      <Stack.Navigator
+      >
         <Stack.Screen options={{ headerShown: false}} name="Login" component={loginscreen} />
         <Stack.Screen options={{ headerShown: false}} name="Tabs" component={Tabs} />
         <Stack.Screen options={{ headerShown: false}} name = "PSpart1" component = {App1} />
@@ -27,6 +39,7 @@ function App() {
     </NavigationContainer>
   );
 }
+
 
 
 const Tab = createBottomTabNavigator()
@@ -54,11 +67,11 @@ function Tabs() {
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarOptions: {
-            showLabel: false
+            showLabel: false,
           },
-          tabBarActiveTintColor: 'tomato',
-          tabBarInactiveTintColor: 'gray',
-          tabBarStyle : { backgroundColor : 'black'},
+          tabBarActiveTintColor: '#FFDAB9',
+          tabBarInactiveTintColor: '#FFFFFF',
+          tabBarStyle : { backgroundColor : '#ffb04f'},
         })
         
         }
