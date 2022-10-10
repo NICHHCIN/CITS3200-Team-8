@@ -19,7 +19,7 @@ const ProfileScreen = () => {
   const [showBox, setShowBox] = useState(true);
   const showConfirmDialog = () => {
     return Alert.alert(
-      "Are your sure?",
+      "Are you sure?",
       "Are you sure you want to LogOut?",
       [
         // The "Yes" button
@@ -69,15 +69,15 @@ const ProfileScreen = () => {
       <View style={styles.userInfoSection}>
         <View style={styles.row}>
           <Icon name="map-marker-radius" color="#777777" size={20}/>
-          <Text style={{color:"#777777", marginLeft: 20}}>Port Hedland</Text>
+          <Text style={styles.infoText}>Port Hedland</Text>
         </View>
         <View style={styles.row}>
           <Icon name="phone" color="#777777" size={20}/>
-          <Text style={{color:"#777777", marginLeft: 20}}>+61412356789</Text>
+          <Text style={styles.infoText}>+61412356789</Text>
         </View>
         <View style={styles.row}>
           <Icon name="email" color="#777777" size={20}/>
-          <Text style={{color:"#777777", marginLeft: 20}}> {auth.currentUser?.email}</Text>
+          <Text style={styles.infoText}> {auth.currentUser?.email}</Text>
         </View>
       </View>
 
@@ -171,5 +171,11 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     fontSize: 16,
     lineHeight: 26,
+  },
+
+  infoText: {
+    marginLeft: 20,
+    fontSize: 15,
+    color: '#777777',
   },
 });

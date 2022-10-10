@@ -22,7 +22,7 @@ const MyTheme = {
     background: '#FFFFFF',
     card: '#ff962b',
     text: '#FFFFFF',
-    border: 'rgb(199, 199, 204)',
+    border: '#ff962b',
     notification: 'rgb(255, 69, 58)',
   },
 };
@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
 });
 
 export default App
