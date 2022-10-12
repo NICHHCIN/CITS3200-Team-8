@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import styles from './styles/navigation.style';
 
 //Screens
  import AnnouncementsScreen from './screens/Announcements';
@@ -13,16 +14,23 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Tab = createBottomTabNavigator();
 
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#FE9738',
+  },
+};
+
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={MyTheme}>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
-            if (route.name === 'Announcements') {
-              iconName = focused ? 'mail-outline' : 'mail-outline';
+          
             } else if (route.name === 'Gallery') {
               iconName = focused ? 'images-outline' : 'images-outline';
             } else if (route.name === 'CheckIn/Out') {
