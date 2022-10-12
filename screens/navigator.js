@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { connect } from 'react-redux'
@@ -37,9 +37,6 @@ const MyTheme = {
 
 const Tab = createBottomTabNavigator();
 export class Main extends Component {
-  componentDidMount() {
-    this.props.getAnnouncements;
-  }
   render() {
     return (
       <Tab.Navigator
@@ -92,12 +89,3 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
-
-
-const mapStateToProps = (store) => ({
-  announcements: store.announcementsState.announcements
-})
-
-const mapDispatchProps = (dispatch) => bindActionCreators({getAnnouncements},dispatch);
-
-export default connect(mapStateToProps, mapDispatchProps)(Main);

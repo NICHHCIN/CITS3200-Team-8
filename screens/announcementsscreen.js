@@ -1,25 +1,30 @@
 import React, {useState, useEffect} from 'react'
 import {StyleSheet, View, Text, FlatList} from 'react-native'
-import { connect } from 'react-redux'
 
 import firebase from 'firebase/compat';
 require('firebase/firestore')
 
-function AnnouncementsScreen(props) {
+export default function AnnouncementsScreen(props) {
     var [announcements, postAnnouncements] = useState([]);
     useEffect(() => {
         firebase.firestore()
-        .collection('locations')
-        .doc('Geraldton')
-        .collection('Announcements')
-        .orderBy("date","asc")
+        .collection('users')
+        .doc(firebase.auth().currentUser.uid)
         .get()
-        .then((snapshot) => {
-            let announcements = snapshot.docs.map(doc => {
-                const data = doc.data().Announcement;
-                return {...data}
+        .then(function(doc){
+            firebase.firestore()
+            .collection('locations')
+            .doc(doc.data().CurrentLocation)
+            .collection('Announcements')
+            .orderBy("date","asc")
+            .get()
+            .then((snapshot) => {
+                let announcements = snapshot.docs.map(doc => {
+                    const data = doc.data().Announcement;
+                    return {...data}
+                })
+                postAnnouncements(announcements)
             })
-            postAnnouncements(announcements)
         })
     }, []);
     return (
@@ -44,10 +49,6 @@ function AnnouncementsScreen(props) {
     )
 }
 
-const mapStateToProps = (store) => ({
-    announcements: store.announcementsState
-})
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -67,5 +68,3 @@ const styles = StyleSheet.create({
         aspectRatio: 1 / 1
     }
 })
-
-export default connect(mapStateToProps, null)(AnnouncementsScreen);
