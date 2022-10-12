@@ -10,7 +10,7 @@ import { StyleSheet } from "react-native";
 //const store = createStore(Reducers, applyMiddleware(thunk))
 
 import loginscreen from './screens/loginscreen';
-import ProfileScreen from './screens/profilescreen';
+import Profile from './screens/profile';
 import Emergency from './screens/emergency';
 import CheckInScreen from './screens/checkin';
 import HomeScreen from './screens/homescreen';
@@ -89,7 +89,7 @@ function Tabs() {
         <Tab.Screen name = "Policies" component = {Policies} />
         <Tab.Screen name = "CheckIn" component = {CheckInScreen} />
         <Tab.Screen name="Emergency" component={Emergency} />         
-        <Tab.Screen name = "Profile" component = {ProfileScreen} />
+        <Tab.Screen name = "Profile" component = {Profile} />
         
       </Tab.Navigator>
   )
