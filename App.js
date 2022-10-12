@@ -5,9 +5,9 @@ import { StyleSheet } from "react-native";
 
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
-//import Reducers from './screens/redux/reducers'
+import Reducers from './screens/redux/reducers'
 import thunk from 'redux-thunk'
-//const store = createStore(Reducers, applyMiddleware(thunk))
+const store = createStore(Reducers, applyMiddleware(thunk))
 
 import loginscreen from './screens/loginscreen';
 import ProfileScreen from './screens/profilescreen';
@@ -35,14 +35,16 @@ const MyTheme = {
 function App() {
   
   return (
-    <NavigationContainer theme={MyTheme}>
-      <Stack.Navigator>
-        <Stack.Screen options={{ headerShown: false}} name="Login" component={loginscreen} />
-        <Stack.Screen options={{ headerShown: false}} name="Tabs" component={Tabs} />
-        <Stack.Screen options={{ headerShown: false}} name="Main" component={Main} />
-        <Stack.Screen options={{ headerShown: false}} name = "PSpart1" component = {App1} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer theme={MyTheme}>
+        <Stack.Navigator>
+          <Stack.Screen options={{ headerShown: false}} name="Login" component={loginscreen} />
+          <Stack.Screen options={{ headerShown: false}} name="Tabs" component={Tabs} />
+          <Stack.Screen options={{ headerShown: false}} name="Main" component={Main} />
+          <Stack.Screen options={{ headerShown: false}} name = "PSpart1" component = {App1} />
+        </Stack.Navigator>
+      </NavigationContainer>
+      </Provider>
   );
 }
 
