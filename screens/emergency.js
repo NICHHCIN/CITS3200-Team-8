@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, Button,  Linking } from 'react-native';
+import { Image, StyleSheet, Text, View, Button,  Linking, TouchableOpacity } from 'react-native';
 
 function getAccomodationAddress() {
   var accomodationAddress = "1234 Main St, Kalbarri, WA 6536";
@@ -24,16 +24,30 @@ const Emergency = () => {
           Emergency Information
         </Text>
         <Text style={styles.paragraph}>
-          Accomodation Address: {getAccomodationAddress()}
+          <Text style={styles.paragraphBold}>Accomodation Address:</Text> {getAccomodationAddress()}
         </Text>
         {/* <Text style={styles.paragraph}>
           Emergency Contact: {getEmergencyContact()}
         </Text> */}
-        <Button title="Call Emergency Contact" onPress={() => Linking.openURL('tel:0412345678')} />
+        
 
         <Text style={styles.paragraph}>
-            Emergency Meeting Point: {getEmergencyMeetingPoint()}
-            </Text>
+          <Text style={styles.paragraphBold}>Emergency Meeting Point: </Text> {getEmergencyMeetingPoint()}
+        </Text>
+
+        <TouchableOpacity
+          style={styles.button}
+          activeOpacity={0.5}
+          onPress={() => Linking.openURL('tel:0412345678')}
+          
+          >
+          
+          <Text style={styles.buttonTextStyle}>
+          CALL EMERGENCY CONTACT
+          </Text>
+        </TouchableOpacity>
+
+            {/*<Button style={styles.button} title="Call Emergency Contact" onPress={() => Linking.openURL('tel:0412345678')} />*/}
         </View>
         );
     }
@@ -52,29 +66,42 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     alignSelf: 'center',
+    marginTop: -100,
   },
 
 
   button: {
-    backgroundColor: '',
+    backgroundColor: '#F15454',
     width: '100%',
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
+    marginTop: 20,
+  },
+
+  buttonTextStyle: {
+    fontSize: 15,
+    color: 'white',
+    fontWeight: 'bold',
   },
 
   paragraph1: {
-    margin: 34,
+    marginTop: -20,
+    margin: 25,
     fontSize: 28,
     fontWeight: 'bold',
     textAlign: 'center',
   },
   paragraph: {
-    margin: 24,
+    margin: 25,
     fontSize: 18,
-    fontWeight: 'bold',
     textAlign: 'center',
+    color: '#78909C',
   },
+
+  paragraphBold: {
+    fontWeight: 'bold',
+  }
 });
 
 

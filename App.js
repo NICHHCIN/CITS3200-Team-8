@@ -1,29 +1,53 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons'
+import { StyleSheet } from "react-native";
+
+//import { Provider } from 'react-redux'
+//import { createStore, applyMiddleware } from 'redux'
+// import Reducers from './screens/redux/reducers'
+//import thunk from 'redux-thunk'
+//const store = createStore(Reducers, applyMiddleware(thunk))
 
 import loginscreen from './screens/loginscreen';
 import Profile from './screens/profile';
 import Emergency from './screens/emergency';
 import CheckInScreen from './screens/checkin';
-import HomeScreen from './screens/HomeScreen';
+import HomeScreen from './screens/homescreen';
 import Policies from './screens/policies';
+import App1 from './screens/popart1';
+import { Main } from './screens/navigator';
+
 const Stack = createNativeStackNavigator()
 
+const MyTheme = {
+  dark: false,
+  colors: {
+    primary: '#ffa74f',
+    background: '#FFFFFF',
+    card: '#ff962b',
+    text: '#FFFFFF',
+    border: '#ff962b',
+    notification: 'rgb(255, 69, 58)',
+  },
+};
 
 function App() {
+  
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen options={{ headerShown: false}} name="Login" component={loginscreen} />
-        <Stack.Screen options={{ headerShown: false}} name="Tabs" component={Tabs} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    //<Provider store={store}>
+      <NavigationContainer theme={MyTheme}>
+        <Stack.Navigator>
+          <Stack.Screen options={{ headerShown: false}} name="Login" component={loginscreen} />
+          <Stack.Screen options={{ headerShown: false}} name="Tabs" component={Tabs} />
+          <Stack.Screen options={{ headerShown: false}} name="Main" component={Main} />
+          <Stack.Screen options={{ headerShown: false}} name = "PSpart1" component = {App1} />
+        </Stack.Navigator>
+      </NavigationContainer>
+      //</Provider>
   );
 }
+
 
 
 const Tab = createBottomTabNavigator()
@@ -51,11 +75,11 @@ function Tabs() {
             return <Ionicons name={iconName} size={size} color={color} />;
           },
           tabBarOptions: {
-            showLabel: false
+            showLabel: false,
           },
-          tabBarActiveTintColor: 'tomato',
-          tabBarInactiveTintColor: 'gray',
-          tabBarStyle : { backgroundColor : 'black'},
+          tabBarActiveTintColor: '#FFDAB9',
+          tabBarInactiveTintColor: '#FFFFFF',
+          tabBarStyle : { backgroundColor : '#ffb04f'},
         })
         
         }
@@ -66,6 +90,7 @@ function Tabs() {
         <Tab.Screen name = "CheckIn" component = {CheckInScreen} />
         <Tab.Screen name="Emergency" component={Emergency} />         
         <Tab.Screen name = "Profile" component = {Profile} />
+        
       </Tab.Navigator>
   )
 }
@@ -77,6 +102,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
 });
 
 export default App

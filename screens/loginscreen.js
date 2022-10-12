@@ -12,7 +12,7 @@ const LoginScreen = () => {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
-        navigation.navigate("Tabs")
+        navigation.navigate("Main")
       }
     })
 
@@ -48,6 +48,7 @@ const LoginScreen = () => {
       behavior="padding"
     >
       <View style={styles.inputContainer}>
+      {/*<View style={styles.talkBubbleSquare}></View>*/}
       <Image source = {require('../assets/icon.png')} style = {styles.icons}/>
         <TextInput
           placeholder="Email"
@@ -137,6 +138,14 @@ const styles = StyleSheet.create({
     height: 100,
     alignSelf: 'center',
     marginBottom: 20,
+  },
+
+  talkBubbleSquare: {
+    width: 400,
+    height: 300,
+    backgroundColor: "#ff962b",
+    borderRadius: 50,
+    alignSelf: 'center',
   },
 
 })
