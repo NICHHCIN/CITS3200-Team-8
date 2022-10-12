@@ -1,10 +1,12 @@
 import { useNavigation } from '@react-navigation/core'
-import React, {useState} from 'react'
-import { StyleSheet, TouchableOpacity, View, Alert, Text, Button, Linking } from 'react-native'
+import React, {useState,useEffect} from 'react'
+import { StyleSheet, TouchableOpacity, View, Alert, Text, Button, Linking, } from 'react-native'
 import { auth } from '../firebase'
 import {SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon2 from 'react-native-vector-icons/Ionicons'
+import firebase from 'firebase/compat';
+require('firebase/firestore')
 import {
   Avatar,
   Title,
@@ -14,6 +16,17 @@ import {
 } from 'react-native-paper';
 
 const ProfileScreen = () => {
+  var [location, postLocation] = useState([]);
+  useEffect(() => {
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .get()
+      .then(function(doc){
+        let location = doc.data().CurrentLocation;
+        postLocation(location)
+      })
+    })
   const navigation = useNavigation()
   const [showBox, setShowBox] = useState(true);
   const showConfirmDialog = () => {
@@ -66,9 +79,9 @@ const ProfileScreen = () => {
       </View>
 
       <View style={styles.userInfoSection}>
-        <View style={styles.row}>
+      <View style={styles.row}>
           <Icon name="map-marker-radius" color="#777777" size={20}/>
-          <Text style={styles.infoText}>Port Hedland</Text>
+          <Text style={styles.infoText}>{location}</Text>
         </View>
         <View style={styles.row}>
           <Icon name="phone" color="#777777" size={20}/>
