@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Button, ImageBackground} from 'react-native';
 import React, {useState} from 'react';
 import styles from './styles/checkin.style';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { iOSUIKit } from 'react-native-typography'
   
 export default function CheckInScreen() {
   const [checkedIn, setCheckedIn] = useState(false);
