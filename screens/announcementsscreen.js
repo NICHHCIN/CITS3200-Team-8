@@ -4,7 +4,7 @@ import {StyleSheet, View, Text, FlatList} from 'react-native'
 import firebase from 'firebase/compat';
 require('firebase/firestore')
 
-export default function AnnouncementsScreen(props) {
+export default function AnnouncementsScreen() {
     var [announcements, postAnnouncements] = useState([]);
     useEffect(() => {
         firebase.firestore()

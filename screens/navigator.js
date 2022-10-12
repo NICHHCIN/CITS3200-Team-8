@@ -2,16 +2,7 @@ import React, {Component} from 'react';
 import { StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-//import { connect } from 'react-redux'
-//import { bindActionCreators } from 'redux'
-//import { getAnnouncements } from './redux/actions';
-import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-//import { Provider } from 'react-redux'
-//import { createStore, applyMiddleware } from 'redux'
-//import Reducers from './redux/reducers'
-//import thunk from 'redux-thunk'
-//const store = createStore(Reducers, applyMiddleware(thunk))
 
 import Profile from './profilescreen' 
 import Emergency from './emergency';
@@ -75,7 +66,7 @@ export class Main extends Component {
         <Tab.Screen name = "Announcements" component = {announcementsscreen} />
         <Tab.Screen name = "Policies" component = {Policies} />
         <Tab.Screen name = "CheckIn" component = {CheckInScreen} />
-        <Tab.Screen name="Emergency" component={Emergency} />         
+        <Tab.Screen name= "Emergency" component={Emergency} />         
         <Tab.Screen name = "Profile" component = {Profile} />
       </Tab.Navigator>
   )
