@@ -16,7 +16,7 @@ export default function AnnouncementsScreen() {
             .collection('locations')
             .doc(doc.data().CurrentLocation)
             .collection('Announcements')
-            .orderBy("date","asc")
+            .orderBy("date","desc")
             .get()
             .then((snapshot) => {
                 let announcements = snapshot.docs.map(doc => {
