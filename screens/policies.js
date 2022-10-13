@@ -63,7 +63,7 @@ const App = () => {
           <Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
-          />*/}
+          />
           <Ionicons style={styles.buttonImageIconStyle} name={"folder"} color={'#FFFFFF'}/>
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
@@ -82,7 +82,7 @@ const App = () => {
           <Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
-          />*/}
+          />
           <Ionicons style={styles.buttonImageIconStyle} name={"folder"} color={'#FFFFFF'}/>
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
@@ -98,7 +98,7 @@ const App = () => {
           <Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
-          />*/}
+          />
           <Ionicons style={styles.buttonImageIconStyle} name={"folder"} color={'#FFFFFF'}/>
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
@@ -115,7 +115,7 @@ const App = () => {
           <Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
-          />*/}
+          />
           <Ionicons style={styles.buttonImageIconStyle} name={"folder"} color={'#FFFFFF'}/>
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
