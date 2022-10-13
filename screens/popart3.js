@@ -4,7 +4,8 @@
 //https://aboutreact.com/image-icon-inside-the-react-native-button/
  
 //import React in our code
-import React from 'react';
+import React,{useState, useEffect} from 'react';
+import * as Progress from 'react-native-progress';
  
 //import all the components we are going to use
 import {
@@ -15,20 +16,106 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
 
 import * as OpenAnything from "react-native-openanything";
- 
+import { useNavigation } from '@react-navigation/core'
+
+var statu=0.0;
+const delay = ms => new Promise(
+  resolve => setTimeout(resolve, ms)
+);
+
+
+
 const App = () => {
+  const navigation = useNavigation()
+  const back = "\u2039"
+  const [count, setCount] = useState(0);
+
+
+  const onPress = async () => {
+    await delay(1000);
+    setCount(count+0.25);
+
+   
+  };
+
+  const onPress1 = async () => {
+    
+    await delay(3000);
+    setCount(count+0.25);
+  };
+
+  const onPress2 = async () => {
+    
+    await delay(3000);
+    setCount(count+0.25);
+  };
+
+  const onPress3 = async () => {
+   
+    
+    setCount(count+0.25);
+    await delay(3000);
+    Alert.alert(
+      'Module Completed'
+   )
+
+  };
+
+
+
+
   return (
+
+
+
     <SafeAreaView style={{flex: 1}}>
        <ScrollView style={styles.scrollView}>
        
       <View style={styles.container}>
-     
+      <TouchableOpacity 
+       
+       activeOpacity={0.5}
+       onPress={() => navigation.navigate('Polic',{replace:true})}
+       >
+      <Text style={styles.buttonTextStyle13}>
+          { back + "\n"}
+          </Text>
+          </TouchableOpacity>
+
+
+          <Text style={styles.buttonTextStyle14}>
+          Policies
+
+          </Text>
+
+
+
+
+          <Text >
+          {'\n'}
+
+          </Text>
+
+         
+          
+          <Progress.Bar progress={count} width={370} />
+
+
+        
+          <Text >
+          {'\n'}
+
+          </Text>
       <TouchableOpacity
           style={styles.buttonFacebookStyle2}
-          activeOpacity={0.5}>
+          activeOpacity={0.5}
+          onPress={onPress} 
+          >
+
           <Image
             source={require('../assets/policy.png')}
             style={styles.buttonImageIconStyle}
@@ -41,7 +128,8 @@ const App = () => {
 
         <TouchableOpacity
           style={styles.buttonFacebookStyle2}
-          activeOpacity={0.5}>
+          activeOpacity={0.5}
+          onPress={onPress1} >
           <Image
             source={require('../assets/policy.png')}
             style={styles.buttonImageIconStyle}
@@ -54,7 +142,8 @@ const App = () => {
 
         <TouchableOpacity
           style={styles.buttonFacebookStyle2}
-          activeOpacity={0.5}>
+          activeOpacity={0.5}
+          onPress={onPress2} >
           <Image
             source={require('../assets/policy.png')}
             style={styles.buttonImageIconStyle}
@@ -73,7 +162,8 @@ const App = () => {
 
         <TouchableOpacity
           style={styles.buttonFacebookStyle2}
-          activeOpacity={0.5}>
+          activeOpacity={0.5}
+          onPress={onPress3} >
           <Image
             source={require('../assets/policy.png')}
             style={styles.buttonImageIconStyle}
@@ -102,6 +192,13 @@ const styles = StyleSheet.create({
 
   buttonTextStyle13: {
     fontSize: 27,
+    fontWeight: "bold",
+    textAlign:'left',
+    marginLeft: "4%"
+  },
+
+  buttonTextStyle14: {
+    fontSize: 22,
     fontWeight: "bold",
     textAlign:'left',
     marginLeft: "4%"
