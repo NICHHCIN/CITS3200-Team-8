@@ -307,11 +307,12 @@ const styles = StyleSheet.create({
     width: 25,
     resizeMode: 'stretch',
     
+    marginTop: -100,
   },
 
 
   // buttonTextStyle: {
-  //   color: '#fff',
+  //   color: '#F15454#fff',
   //   marginBottom: 4,
   //   marginLeft: 15,
   //   fontSize: 18,
@@ -321,6 +322,13 @@ const styles = StyleSheet.create({
   buttonFacebookStyle2: {
     flexDirection: 'row',
     alignItems: 'center',
+    marginTop: 20,
+  },
+
+  buttonTextStyle: {
+    fontSize: 15,
+    color: 'white',
+    fontWeight: 'bold',
     backgroundColor: '#0168a8',
     borderWidth: 0.5,
     borderColor: '#fff',
