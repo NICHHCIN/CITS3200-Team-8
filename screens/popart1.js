@@ -4,7 +4,10 @@
 //https://aboutreact.com/image-icon-inside-the-react-native-button/
  
 //import React in our code
-import React from 'react';
+
+
+import React,{useState, useEffect} from 'react';
+import * as Progress from 'react-native-progress';
  
 //import all the components we are going to use
 import {
@@ -14,30 +17,113 @@ import {
   Text,
   Image,
   ScrollView,
+  Alert,
   TouchableOpacity,
 } from 'react-native';
+import {
+  Avatar,
+  Title,
+  Caption,
 
+  TouchableRipple,
+} from 'react-native-paper';
 import * as OpenAnything from "react-native-openanything";
- 
+import { useNavigation } from '@react-navigation/core'
+
+
+const delay = ms => new Promise(
+  resolve => setTimeout(resolve, ms)
+);
+
+
+
+
 const App1 = () => {
+  const navigation = useNavigation()
+  const back = "\u2039"
+
+  const [count1, setCount1] = useState(0);
+
+
+  const onPress =  () => {
+    console.log("here");
+    OpenAnything.Pdf('https://drive.google.com/file/d/1UWIbtXo1oRLTQj7wf8O2BsbVp9aHbVRa/view?usp=sharing');
+    setCount1(count1+0.50);
+
+   
+  };
+
+  const onPress1 = async () => {
+    OpenAnything.Pdf('https://drive.google.com/file/d/11g1Y2wXOMvAncf3cEOxxYtb321LuoxzD/view?usp=sharing')
+    await delay(3000);
+    setCount1(count1+0.50);
+    await delay(3000);
+    Alert.alert(
+      'Module Completed'
+   )
+  };
+
+  
+
+
   return (
     <SafeAreaView style={{flex: 1}}>
        <ScrollView style={styles.scrollView}>
+
        
+       
+
+
+
+
       <View style={styles.container}>
-     
+
+
+
+    
+      <TouchableOpacity 
+       
+       activeOpacity={0.5}
+       onPress={() => navigation.navigate('Polic',{replace:true})}
+       
+       >
       <Text style={styles.buttonTextStyle13}>
-          Files
+          { back + "\n"}
+          </Text>
+          </TouchableOpacity>
+
+
+          <Text style={styles.buttonTextStyle14}>
+          Emergency
 
           </Text>
+
+
+
+
           <Text >
           {'\n'}
 
           </Text>
+
+         
+          
+          <Progress.Bar progress={count1} width={370} />
+
+
+        
+          <Text >
+          {'\n'}
+
+          </Text>
+          
+
+          
+
         <TouchableOpacity
           style={styles.buttonGPlusStyle}
           activeOpacity={0.5}
-          onPress={() => OpenAnything.Pdf('https://drive.google.com/file/d/1UWIbtXo1oRLTQj7wf8O2BsbVp9aHbVRa/view?usp=sharing')}
+          onPress={onPress}
           
           >
           <Image
@@ -51,10 +137,15 @@ const App1 = () => {
         </TouchableOpacity>
 
 
+        
+
+
+
         <TouchableOpacity
           style={styles.buttonGPlusStyle}
           activeOpacity={0.5}
-          onPress={() => OpenAnything.Pdf('https://drive.google.com/file/d/11g1Y2wXOMvAncf3cEOxxYtb321LuoxzD/view?usp=sharing')}>
+          onPress={onPress1}      
+              >
           <Image
             source={require('../assets/emerg.png')}
             style={styles.buttonImageIconStyle}
@@ -64,6 +155,9 @@ const App1 = () => {
           In Case of Emergency contacts
           </Text>
         </TouchableOpacity>
+        
+
+
 
 
       </View>
@@ -86,6 +180,14 @@ const styles = StyleSheet.create({
     marginLeft: "4%"
   },
 
+
+  
+buttonTextStyle14: {
+    fontSize: 22,
+    fontWeight: "bold",
+    textAlign:'left',
+    marginLeft: "4%"
+  },
   container: {
     flex: 1,
     margin: 10,

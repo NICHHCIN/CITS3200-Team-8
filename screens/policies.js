@@ -38,7 +38,7 @@ const App = () => {
       <TouchableOpacity
           style={styles.buttonGPlusStyle}
           activeOpacity={0.5}
-          onPress={() => navigation.replace("PSpart1")}
+          onPress={() => navigation.navigate("PSpart1")}
           
           >
           <Image
