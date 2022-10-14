@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {StyleSheet, View, Text, FlatList} from 'react-native'
+import { CardViewWithIcon } from 'react-native-simple-card-view'
 
 import firebase from 'firebase/compat';
 require('firebase/firestore')
@@ -30,19 +31,26 @@ export default function AnnouncementsScreen() {
     return (
         <View style={styles.container}>
             <View style={styles.containerGallery}>
-                <FlatList
+
+            <FlatList
+                    paddingTop = {20}
+                    alignItems = 'center'
                     numColumns={1}
                     horizontal={false}
                     data={announcements}
                     renderItem={({ item }) => (
-                        <View
-                            style={styles.containerImage}>
-                            <Text style={styles.container}>{Object.values(item)}</Text>
-                        </View>
+                        <CardViewWithIcon
+                            androidIcon={'megaphone' }
+                            iosIcon={ 'megaphone' }
+                            iconBgColor={ '#005582' }
+                            iconColor={ '#FFFFFF' }
+                            content={ Object.values(item) }
+                        />
 
                     )}
 
-                />
+                    />
+
             </View>
         </View>
 

@@ -4,12 +4,10 @@
 //https://aboutreact.com/image-icon-inside-the-react-native-button/
  
 //import React in our code
-
-
 import React,{useState, useEffect} from 'react';
 import * as Progress from 'react-native-progress';
- 
-//import all the components we are going to use
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+ //import all the components we are going to use
 import {
   SafeAreaView,
   StyleSheet,
@@ -28,15 +26,26 @@ import {
   TouchableRipple,
 } from 'react-native-paper';
 import * as OpenAnything from "react-native-openanything";
-import { useNavigation } from '@react-navigation/core'
+import { useNavigation } from '@react-navigation/core';
+import Policies from './policies';
 
 
 const delay = ms => new Promise(
   resolve => setTimeout(resolve, ms)
 );
 
+/*
+function GoToButton({ screenName }) {
+  const navigation = useNavigation();
 
-
+  return (
+    <TouchableOpacity
+      onPress={() => navigation.navigate('Policies')}
+    >
+        <Text>Back</Text>
+    </TouchableOpacity>
+  );
+}*/
 
 const App1 = () => {
   const navigation = useNavigation()
@@ -78,13 +87,13 @@ const App1 = () => {
 
       <View style={styles.container}>
 
-
+      {/*<GoToButton screenName="Policies"/>*/}
 
     
       <TouchableOpacity 
        
        activeOpacity={0.5}
-       onPress={() => navigation.navigate('Polic',{replace:true})}
+       onPress={() => navigation.navigate('Policies',{replace:true})}
        
        >
       <Text style={styles.buttonTextStyle13}>

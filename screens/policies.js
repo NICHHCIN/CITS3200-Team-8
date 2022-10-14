@@ -60,10 +60,10 @@ const App = () => {
           style={styles.buttonFacebookStyle}
           activeOpacity={0.5} 
           onPress={() => navigation.replace("PSpart2")} >
-          <Image
+          {/*<Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
-          />
+        />*/}
           <Ionicons style={styles.buttonImageIconStyle} name={"folder"} color={'#FFFFFF'}/>
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
@@ -79,10 +79,10 @@ const App = () => {
           style={styles.buttonFacebookStyle2}
           activeOpacity={0.5}
           onPress={() => navigation.replace("PSpart3")} >
-          <Image
+          {/*<Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
-          />
+      />*/}
           <Ionicons style={styles.buttonImageIconStyle} name={"folder"} color={'#FFFFFF'}/>
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
@@ -95,10 +95,10 @@ const App = () => {
           style={styles.buttonFacebookStyle4}
           activeOpacity={0.5}
           onPress={() => navigation.replace("PSpart4")} >
-          <Image
+          {/*<Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
-          />
+    />*/}
           <Ionicons style={styles.buttonImageIconStyle} name={"folder"} color={'#FFFFFF'}/>
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
@@ -112,10 +112,10 @@ const App = () => {
           style={styles.buttonFacebookStyle3}
           activeOpacity={0.5}
           onPress={() => navigation.replace("PSpart5")} >
-          <Image
+          {/*<Image
             source={require('../assets/folder.png')}
             style={styles.buttonImageIconStyle}
-          />
+  />*/}
           <Ionicons style={styles.buttonImageIconStyle} name={"folder"} color={'#FFFFFF'}/>
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>

@@ -38,6 +38,8 @@ export class Main extends Component {
 
             if (route.name === 'Home') {
               iconName = focused ? 'home-sharp' : 'home-outline';
+            } else if (route.name === 'Announcements') {
+              iconName = focused ? 'megaphone-sharp' : 'megaphone-outline';
             } else if (route.name === 'Emergency') {
               iconName = focused ? 'call-sharp' : 'call-outline';
             } else if (route.name === 'CheckIn') {

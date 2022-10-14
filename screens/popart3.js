@@ -21,6 +21,7 @@ import {
 
 import * as OpenAnything from "react-native-openanything";
 import { useNavigation } from '@react-navigation/core'
+import Policies from './policies';
 
 var statu=0.0;
 const delay = ms => new Promise(
@@ -79,7 +80,7 @@ const App = () => {
       <TouchableOpacity 
        
        activeOpacity={0.5}
-       onPress={() => navigation.navigate('Polic',{replace:true})}
+       onPress={() => navigation.navigate('Policies',{replace:true})}
        >
       <Text style={styles.buttonTextStyle13}>
           { back + "\n"}

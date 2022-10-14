@@ -6,6 +6,7 @@
 //import React in our code
 import React,{useState, useEffect} from 'react';
 import * as Progress from 'react-native-progress';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 //import all the components we are going to use
 import {
   SafeAreaView,
@@ -21,6 +22,7 @@ import {
 import { useNavigation } from '@react-navigation/core'
 
 import * as OpenAnything from "react-native-openanything";
+import Policies from './policies';
 
 
 
@@ -76,7 +78,7 @@ const App = () => {
       <TouchableOpacity 
        
        activeOpacity={0.5}
-       onPress={() => navigation.navigate('Polic',{replace:true})}
+       onPress={() => navigation.navigate('Policies',{replace:true})}
       >
       <Text style={styles.buttonTextStyle13}>
           { back + "\n"}

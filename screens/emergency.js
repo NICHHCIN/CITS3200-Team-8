@@ -88,7 +88,7 @@ const App = () => {
           
           <View style={styles.buttonIconSeparatorStyle} />
           <Text style={styles.buttonTextStyle}>
-          Docter (Nick)
+          Doctor (Nick)
           </Text>
           <Image
             source={require('../assets/phone2.png')}
