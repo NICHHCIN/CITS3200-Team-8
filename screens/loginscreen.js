@@ -92,29 +92,47 @@ const LoginScreen = () => {
         >
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
-        {/* <TouchableOpacity
-          onPress={handleSignUp}
-          style={[styles.button, styles.buttonOutline]}
+           
+      </View>
+      <View style={styles.greytext}>
+        <TouchableOpacity
+          onPress={ContactAdmin}
+          style={styles.greytext}
         >
-          <Text style={styles.buttonOutlineText}>Register</Text>
-        </TouchableOpacity> */}
 
-        {/* /* At the bottom of the screen, add a link to contact admin, and a link to forgot password */ }
+          <Text style={styles.greytext}>Contact Admin</Text> 
+
+        </TouchableOpacity>
+        
+      </View>
+
+      <View style={styles.greytext}>
         <TouchableOpacity
           onPress={() => navigation.navigate("ForgotPassword")}
-          style={[styles.button, styles.buttonOutline]}
-        > 
-          <Text style={styles.buttonOutlineText}>Forgot Password?</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={() => ContactAdmin()}
-          style={[styles.button, styles.buttonOutline]}
+          style={styles.greytext}
         >
-          <Text style={styles.buttonOutlineText}>Contact Admin</Text>
-        </TouchableOpacity>
 
-    
+          <Text style={styles.greytext}>Forgot Password?</Text> 
+
+        </TouchableOpacity>
+        
       </View>
+
+      {/* // a visit us link at the bottom of the page that links to the website www.wacrh.com.au  */}
+      <View style={styles.visitus}>
+        <TouchableOpacity
+          onPress={() => Linking.openURL('https://www.wacrh.uwa.edu.au/')}
+          style={styles.visitus}
+        >
+
+          <Text style={styles.visitus}>Visit Us</Text>
+
+        </TouchableOpacity>
+      </View>
+
+
+
+
     </KeyboardAvoidingView>
   )
 }
@@ -122,6 +140,23 @@ const LoginScreen = () => {
 export default LoginScreen
 
 const styles = StyleSheet.create({
+  visitus: {
+    color: '#000000',
+    fontSize: 15,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 10,
+
+  },
+
+  greytext: {
+    color: 'grey',
+    fontSize: 12,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 10,
+        
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
