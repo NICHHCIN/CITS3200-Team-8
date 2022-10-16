@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Button, ImageBackground} from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from './styles/checkin.style';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { iOSUIKit } from 'react-native-typography'
@@ -16,6 +16,17 @@ export default function CheckInScreen() {
   const location = "Port Hedland";
   const expectedcheckout = "22/08/2022";
   
+  useEffect(() => {
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .get()
+      .then(function(doc){
+        let fname = doc.data().FirstName;
+        let lname = doc.data().LastName;
+        setName(fname+ ' ' + lname)
+      })
+    })
 
   return (
     
