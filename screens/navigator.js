@@ -7,7 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Profile from './profilescreen' 
 import Emergency from './emergency';
 import CheckInScreen from './checkin';
-import HomeScreen from './homescreen';
+import HomeScreen from './HomeScreen';
 import Policies from './policies';
 import announcementsscreen from './announcementsscreen';
 
