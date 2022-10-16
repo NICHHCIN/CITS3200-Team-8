@@ -29,6 +29,9 @@ import * as OpenAnything from "react-native-openanything";
 import { useNavigation } from '@react-navigation/core';
 import Policies from './policies';
 
+import firebase from 'firebase/compat';
+import { updateDoc } from 'firebase/firestore';
+require('firebase/firestore') 
 
 const delay = ms => new Promise(
   resolve => setTimeout(resolve, ms)
@@ -52,24 +55,61 @@ const App1 = () => {
   const back = "\u2039"
 
   const [count1, setCount1] = useState(0);
+  const [data, setData] = useState('0');
 
+  useEffect(() => {
+    firebase.firestore()
+    .collection('users')
+    .doc(firebase.auth().currentUser.uid)
+    .get()
+      .then(function(doc){
+          let data = doc.data().read;
+          if (data == '0') {
+            setData('00000000000000000')
+            doc.update({read: '00000000000000000'});
+          }
+          else setData(data)
+      })
+      if (data[0]+data[1] == '00') {
+        setCount1(0)
+      } 
+      else if (data[0]+data[1] == '01') {
+        setCount1(0.5)
+      }
+      else if (data[0]+data[1] == '10') {
+        setCount1(0.5)
+      }
+      else setCount1(1)
+    })
 
   const onPress =  () => {
-    console.log("here");
-    OpenAnything.Pdf('https://drive.google.com/file/d/1UWIbtXo1oRLTQj7wf8O2BsbVp9aHbVRa/view?usp=sharing');
-    setCount1(count1+0.50);
-
-   
+    OpenAnything.Pdf('https://drive.google.com/file/d/11g1Y2wXOMvAncf3cEOxxYtb321LuoxzD/view?usp=sharing')
+    if (data[0] == '0') {
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .update({read: '1'+data[1]+data[2]+data[3]+data[4]+data[5]+data[6]+data[7]+data[8]+data[9]+data[10]+data[11]+data[12]+data[13]+data[14]+data[15]+data[16]});
+      setCount1(count1+0.5)
+      if (count1 == 1){
+        alert("Module Completed")
+      }
+    }
   };
 
   const onPress1 = async () => {
     OpenAnything.Pdf('https://drive.google.com/file/d/11g1Y2wXOMvAncf3cEOxxYtb321LuoxzD/view?usp=sharing')
-    await delay(3000);
-    setCount1(count1+0.50);
-    await delay(3000);
-    Alert.alert(
-      'Module Completed'
-   )
+    if (data[1] == '0') {
+      setCount1(count1+0.5)
+      if (count1 == 1){
+        alert('Module Completed')
+      }
+    
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .update({read: data[0]+'1'+data[2]+data[3]+data[4]+data[5]+data[6]+data[7]+data[8]+data[9]+data[10]+data[11]+data[12]+data[13]+data[14]+data[15]+data[16]
+    });
+  }
   };
 
   

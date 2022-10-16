@@ -23,6 +23,10 @@ import * as OpenAnything from "react-native-openanything";
 import { useNavigation } from '@react-navigation/core'
 import Policies from './policies';
 
+import firebase from 'firebase/compat';
+import { updateDoc } from 'firebase/firestore';
+require('firebase/firestore') 
+
 var statu=0.0;
 const delay = ms => new Promise(
   resolve => setTimeout(resolve, ms)
@@ -34,36 +38,98 @@ const App = () => {
   const navigation = useNavigation()
   const back = "\u2039"
   const [count, setCount] = useState(0);
+  const [data, setData] = useState('0');
+
+  useEffect(() => {
+    firebase.firestore()
+    .collection('users')
+    .doc(firebase.auth().currentUser.uid)
+    .get()
+    .then(function(doc){
+      let data = doc.data().read;
+      if (data == '0') {
+        setData('00000000000000000')
+        doc.update({read: '00000000000000000'});
+      }
+      else setData(data)
+  })
+    if (data[5]+data[6]+data[7]+data[8] == '0000') {
+      setCount(0)
+    } 
+    else if (data[5]+data[6]+data[7]+data[8] == '1000' || data[5]+data[6]+data[7]+data[8] == '0010' || data[5]+data[6]+data[7]+data[8] == '0100' || data[5]+data[6]+data[7]+data[8] == '0001') {
+      setCount(0.25)
+    }
+    else if (data[5]+data[6]+data[7]+data[8] == '1110' || data[5]+data[6]+data[7]+data[8] == '0111' || data[5]+data[6]+data[7]+data[8] == '1101' || data[5]+data[6]+data[7]+data[8] == '1011') {
+      setCount(0.75)
+    }
+    else if (data[5]+data[6]+data[7]+data[8] == '1111') {
+      setCount(1)
+    }
+    else setCount(0.5)
+  })
 
 
   const onPress = async () => {
-    await delay(1000);
-    setCount(count+0.25);
-
-   
+    if (data[5] == '0') {
+      setCount(count+0.25)
+      if (count == 1){
+        alert('Module Completed')
+      }
+    
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .update({read: data[0]+data[1]+data[2]+data[3]+data[4]+'1'+data[6]+data[7]+data[8]+data[9]+data[10]+data[11]+data[12]+data[13]+data[14]+data[15]+data[16]
+    });
+  }
   };
 
   const onPress1 = async () => {
     
-    await delay(3000);
-    setCount(count+0.25);
+    if (data[6] == '0') {
+      setCount(count+0.25)
+      if (count == 1){
+        alert('Module Completed')
+      }
+    
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .update({read: data[0]+data[1]+data[2]+data[3]+data[4]+data[5]+'1'+data[7]+data[8]+data[9]+data[10]+data[11]+data[12]+data[13]+data[14]+data[15]+data[16]
+    });
+  }
   };
 
   const onPress2 = async () => {
     
-    await delay(3000);
-    setCount(count+0.25);
+    if (data[7] == '0') {
+      setCount(count+0.25)
+      if (count == 1){
+        alert('Module Completed')
+      }
+    
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .update({read: data[0]+data[1]+data[2]+data[3]+data[4]+data[5]+data[6]+'1'+data[8]+data[9]+data[10]+data[11]+data[12]+data[13]+data[14]+data[15]+data[16]
+    });
+  }
   };
 
   const onPress3 = async () => {
    
+    if (data[8] == '0') {
+      setCount(count+0.25)
+      if (count == 1){
+        alert('Module Completed')
+      }
     
-    setCount(count+0.25);
-    await delay(3000);
-    Alert.alert(
-      'Module Completed'
-   )
-
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .update({read: data[0]+data[1]+data[2]+data[3]+data[4]+data[5]+data[6]+data[7]+'1'+data[9]+data[10]+data[11]+data[12]+data[13]+data[14]+data[15]+data[16]
+    });
+  }
   };
 
 

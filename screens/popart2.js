@@ -24,7 +24,9 @@ import { useNavigation } from '@react-navigation/core'
 import * as OpenAnything from "react-native-openanything";
 import Policies from './policies';
 
-
+import firebase from 'firebase/compat';
+import { updateDoc } from 'firebase/firestore';
+require('firebase/firestore') 
 
 var statu=0.0;
 const delay = ms => new Promise(
@@ -38,36 +40,81 @@ const App = () => {
   const navigation = useNavigation()
   const back = "\u2039"
   const [count, setCount] = useState(0);
+  const [data, setData] = useState('0');
 
-
+  useEffect(() => {
+    firebase.firestore()
+    .collection('users')
+    .doc(firebase.auth().currentUser.uid)
+    .get()
+    .then(function(doc){
+      let data = doc.data().read;
+      if (data == '0') {
+        setData('00000000000000000')
+        doc.update({read: '00000000000000000'});
+      }
+      else setData(data)
+  })
+    if (data[2]+data[3]+data[4] == '000') {
+      setCount(0)
+    } 
+    else if (data[2]+data[3]+data[4] == '001' || data[2]+data[3]+data[4] == '010' || data[2]+data[3]+data[4] == '100') {
+      setCount(1/3)
+    }
+    else if (data[2]+data[3]+data[4] == '111') {
+      setCount(1)
+    }
+    else setCount(2/3)
+  })
 
 
   const onPress = async () => {
     OpenAnything.Pdf('https://drive.google.com/file/d/1X2v1_fYHMQJsfkhOzQpfhZqxxagyV_wT/view?usp=sharing');
-    await delay(1000);
-    setCount(count+0.33);
-
-   
+    if (data[2] == '0') {
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .update({read: data[0]+data[1]+'1'+data[3]+data[4]+data[5]+data[6]+data[7]+data[8]+data[9]+data[10]+data[11]+data[12]+data[13]+data[14]+data[15]+data[16]
+    });
+      setCount(count+(1/3))
+      if (count == 1){
+        alert('Module Completed')
+      }
+  }
   };
 
   const onPress1 = async () => {
     
-    await delay(3000);
-    setCount(count+0.33);
+    if (data[3] == '0') {
+      setCount(count+(1/3))
+      if (count == 1){
+        alert('Module Completed')
+      }
+    
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .update({read: data[0]+data[1]+data[2]+'1'+data[4]+data[5]+data[6]+data[7]+data[8]+data[9]+data[10]+data[11]+data[12]+data[13]+data[14]+data[15]+data[16]
+    });
+  }
   };
 
   const onPress3 = async () => {
-   
     OpenAnything.Pdf('https://drive.google.com/file/d/1X2v1_fYHMQJsfkhOzQpfhZqxxagyV_wT/view?usp=sharing');
     
-    setCount(count+0.34);
-    await delay(3000);
-    Alert.alert(
-      'Module Completed'
-   )
-
-  };
-
+    if (data[4] == '0') {
+    
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .update({read: data[0]+data[1]+data[2]+data[3]+'1'+data[5]+data[6]+data[7]+data[8]+data[9]+data[10]+data[11]+data[12]+data[13]+data[14]+data[15]+data[16]
+    });
+      setCount(count+(1/3))
+      if (count == 1){
+        alert('Module Completed')
+      }
+    }
+};
 
 
   return (
