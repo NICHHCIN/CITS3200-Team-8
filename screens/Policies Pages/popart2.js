@@ -22,7 +22,7 @@ import {
 import { useNavigation } from '@react-navigation/core'
 
 import * as OpenAnything from "react-native-openanything";
-import Policies from './policies';
+import Policies from '../policies';
 
 import firebase from 'firebase/compat';
 import { updateDoc } from 'firebase/firestore';
