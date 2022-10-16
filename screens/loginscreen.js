@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
-import { Image, KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Image, Alert, KeyboardAvoidingView, Linking, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import { auth } from '../firebase'
 
 const LoginScreen = () => {
@@ -8,7 +8,25 @@ const LoginScreen = () => {
   const [password, setPassword] = useState('')
   
   const navigation = useNavigation()
+  const ContactAdmin  = () => {
+    return (
+    Alert.alert(
+      "Contact Admin",
+      "Do you want to contact admin?",
+      [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel Pressed"),
+          style: "cancel"
+        },
+        { text: "OK", onPress: () => Linking.openURL('mailto:admin@wacrh.com.au') }
+      ],
+      { cancelable: false }
+    )
+    )
 
+  }
+      
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
@@ -83,13 +101,13 @@ const LoginScreen = () => {
 
         {/* /* At the bottom of the screen, add a link to contact admin, and a link to forgot password */ }
         <TouchableOpacity
-          onPress={() => navigation.navigate("ForgotPassword ?")}
+          onPress={() => navigation.navigate("ForgotPassword")}
           style={[styles.button, styles.buttonOutline]}
         > 
-          <Text style={styles.buttonOutlineText}>Forgot Password</Text>
+          <Text style={styles.buttonOutlineText}>Forgot Password?</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => navigation.navigate("ContactAdmin")}
+          onPress={() => ContactAdmin()}
           style={[styles.button, styles.buttonOutline]}
         >
           <Text style={styles.buttonOutlineText}>Contact Admin</Text>

@@ -7,7 +7,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Profile from './profilescreen' 
 import Emergency from './emergency';
 import CheckInScreen from './checkin';
-import HomeScreen from './homescreen';
+import homescreen from './HomeScreen';
 import Policies from './policies';
 import announcementsscreen from './announcementsscreen';
 
@@ -64,7 +64,7 @@ export class Main extends Component {
         }
       >
 
-        <Tab.Screen name = "Home" component = {HomeScreen} />
+        <Tab.Screen name = "Home" component = {homescreen} />
         <Tab.Screen name = "Announcements" component = {announcementsscreen} />
         <Tab.Screen name = "Policies" component = {Policies} />
         <Tab.Screen name = "CheckIn" component = {CheckInScreen} />

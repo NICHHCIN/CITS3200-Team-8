@@ -37,3 +37,36 @@ export default function ForgotPasswordScreen() {
         </View>
     )
     }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    input: {
+        width: 300,
+
+        height: 50,
+        backgroundColor: '#fff',
+        margin: 10,
+        padding: 8,
+        color: '#424242',
+        borderRadius: 14,
+        fontSize: 18,
+        fontWeight: '500',
+    },
+    button: {
+        backgroundColor: '#FFA500',
+        padding: 20,
+
+        borderRadius: 5,
+    },
+    buttonText: {
+        fontSize: 20,
+        color: '#fff',
+
+    },
+});
+
+    

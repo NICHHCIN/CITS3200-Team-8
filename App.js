@@ -2,9 +2,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import loginscreen from './screens/loginscreen';
-
-import App1 from './screens/Policies Pages/popart1';
 import { Main } from './screens/navigator';
+import ForgotPasswordScreen from './screens/forgot_password';
+// Policies Segment 
+import App1 from './screens/Policies Pages/popart1';
 import App2 from './screens/Policies Pages/popart2';
 import App3 from './screens/Policies Pages/popart3';
 import App4 from './screens/Policies Pages/popart4';
@@ -30,6 +31,7 @@ function App() {
       <NavigationContainer theme={MyTheme}>
         <Stack.Navigator>
           <Stack.Screen options={{ headerShown: false}} name="Login" component={loginscreen} />
+          <Stack.Screen options={{ headerShown: false}} name="ForgotPassword" component={ForgotPasswordScreen} />
           <Stack.Screen options={{ headerShown: false}} name="Main" component={Main} />
           <Stack.Screen options={{ headerShown: false}} name = "PSpart1" component = {App1} />
         <Stack.Screen options={{ headerShown: false}} name = "PSpart2" component = {App2} />
