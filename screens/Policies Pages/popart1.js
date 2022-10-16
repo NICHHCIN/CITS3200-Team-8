@@ -13,13 +13,6 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import {
-  Avatar,
-  Title,
-  Caption,
-
-  TouchableRipple,
-} from 'react-native-paper';
 import * as OpenAnything from "react-native-openanything";
 import { useNavigation } from '@react-navigation/core';
 
