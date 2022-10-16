@@ -2,12 +2,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import loginscreen from './screens/loginscreen';
-import App1 from './Policies Pages/screens/popart1';
+import App1 from './screens/popart1';
 import { Main } from './screens/navigator';
-import App2 from './screens/Policies Pages/popart2';
-import App3 from './screens/Policies Pages/popart3';
-import App4 from './screens/Policies Pages/popart4';
-import App5 from './screens/Policies Pages/popart5';
+import App2 from './screens/popart2';
+import App3 from './screens/popart3';
+import App4 from './screens/popart4';
+import App5 from './screens/popart5';
 import App13 from './screens/policies';
 const Stack = createNativeStackNavigator()
 

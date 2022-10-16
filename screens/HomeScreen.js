@@ -5,7 +5,7 @@ import Task from './Task';
 import firebase from 'firebase/compat';
 require('firebase/firestore') 
 
-export default function App() {
+export default function homescreen() {
 
   var [data, postData] = useState([]);
   useEffect(() => {
