@@ -28,7 +28,7 @@ import * as OpenAnything from "react-native-openanything";
 
 
  
-const App = () => {
+const Policies = () => {
   const navigation = useNavigation()
   return (
     <SafeAreaView style={{flex: 1}}>
@@ -537,4 +537,4 @@ const styles = StyleSheet.create({
 
 });
  
-export default App;
+export default Policies;
