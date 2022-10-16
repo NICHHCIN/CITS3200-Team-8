@@ -46,11 +46,7 @@ const App = () => {
     .get()
     .then(function(doc){
       let data = doc.data().read;
-      if (data == '0') {
-        setData('00000000000000000')
-        doc.update({read: '00000000000000000'});
-      }
-      else setData(data)
+      setData(data)
   })
     if (data[12]+data[13]+data[14]+data[15]+data[16] == '00000') {
       setCount(0)

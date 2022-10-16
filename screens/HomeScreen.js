@@ -1,8 +1,29 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, ScrollView } from 'react-native';
 import Task from './Task';
 
+import firebase from 'firebase/compat';
+require('firebase/firestore') 
+
 export default function App() {
+
+  var [data, postData] = useState([]);
+  useEffect(() => {
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .get()
+      .then(function(doc){
+        let data = doc.data().read;
+        postData(data)
+      })
+    })
+  if (data == '0') {
+    firebase.firestore()
+    .collection('users')
+    .doc(firebase.auth().currentUser.uid)
+    .update({read: '00000000000000000'});
+  }
   const [task, setTask] = useState();
   const [taskItems, setTaskItems] = useState([]);
 
