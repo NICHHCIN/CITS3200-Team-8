@@ -2,7 +2,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import loginscreen from './screens/loginscreen';
-import App1 from './screens/popart1';
+
+import App1 from './screens/Policies Pages/popart1';
 import { Main } from './screens/navigator';
 import App2 from './screens/popart2';
 import App3 from './screens/popart3';
