@@ -22,6 +22,8 @@ export default function AnnouncementsScreen() {
             .then((snapshot) => {
                 let announcements = snapshot.docs.map(doc => {
                     const data = doc.data().Announcement;
+                /*let dates = snapshot.docs.map(doc => {
+                    const data2 = doc.data().date;*/
                     return {...data}
                 })
                 postAnnouncements(announcements)
@@ -44,6 +46,7 @@ export default function AnnouncementsScreen() {
                             iosIcon={ 'megaphone' }
                             iconBgColor={ '#005582' }
                             iconColor={ '#FFFFFF' }
+                            title={ Object.values(item)}
                             content={ Object.values(item) }
                         />
 
