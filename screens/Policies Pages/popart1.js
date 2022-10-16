@@ -1,12 +1,8 @@
-
-
 //Image Icon Inside the React Native Button
 //https://aboutreact.com/image-icon-inside-the-react-native-button/
- 
 //import React in our code
 import React,{useState, useEffect} from 'react';
 import * as Progress from 'react-native-progress';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
  //import all the components we are going to use
 import {
   SafeAreaView,
@@ -15,7 +11,6 @@ import {
   Text,
   Image,
   ScrollView,
-  Alert,
   TouchableOpacity,
 } from 'react-native';
 import {
@@ -27,10 +22,8 @@ import {
 } from 'react-native-paper';
 import * as OpenAnything from "react-native-openanything";
 import { useNavigation } from '@react-navigation/core';
-import Policies from './policies';
 
 import firebase from 'firebase/compat';
-import { updateDoc } from 'firebase/firestore';
 require('firebase/firestore') 
 
 const delay = ms => new Promise(
@@ -172,7 +165,7 @@ const App1 = () => {
           
           >
           <Image
-            source={require('../assets/emerg.png')}
+            source={require('../../assets/emerg.png')}
             style={styles.buttonImageIconStyle}
           />
           <View style={styles.buttonIconSeparatorStyle} />
@@ -192,7 +185,7 @@ const App1 = () => {
           onPress={onPress1}      
               >
           <Image
-            source={require('../assets/emerg.png')}
+            source={require('../../assets/emerg.png')}
             style={styles.buttonImageIconStyle}
           />
           <View style={styles.buttonIconSeparatorStyle} />

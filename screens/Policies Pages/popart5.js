@@ -16,15 +16,11 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
-  Alert,
 } from 'react-native';
-
-import * as OpenAnything from "react-native-openanything";
 
 import { useNavigation } from '@react-navigation/core'
 
 import firebase from 'firebase/compat';
-import { updateDoc } from 'firebase/firestore';
 require('firebase/firestore') 
 
 var statu=0.0;
@@ -195,7 +191,7 @@ const App = () => {
           activeOpacity={0.5}
           onPress={onPress}>
           <Image
-            source={require('../assets/information.png')}
+            source={require('../../assets/information.png')}
             style={styles.buttonImageIconStyle}
           />
           <View style={styles.buttonIconSeparatorStyle} />
@@ -210,7 +206,7 @@ const App = () => {
           activeOpacity={0.5}
           onPress={onPress0}>
           <Image
-            source={require('../assets/information.png')}
+            source={require('../../assets/information.png')}
             style={styles.buttonImageIconStyle}
           />
           <View style={styles.buttonIconSeparatorStyle} />
@@ -225,7 +221,7 @@ const App = () => {
           activeOpacity={0.5}
           onPress={onPress1}>
           <Image
-            source={require('../assets/information.png')}
+            source={require('../../assets/information.png')}
             style={styles.buttonImageIconStyle}
           />
           <View style={styles.buttonIconSeparatorStyle} />
@@ -240,7 +236,7 @@ const App = () => {
           activeOpacity={0.5}
           onPress={onPress2}>
           <Image
-            source={require('../assets/information.png')}
+            source={require('../../assets/information.png')}
             style={styles.buttonImageIconStyle}
           />
           <View style={styles.buttonIconSeparatorStyle} />
@@ -255,7 +251,7 @@ const App = () => {
           activeOpacity={0.5}
           onPress={onPress3}>
           <Image
-            source={require('../assets/information.png')}
+            source={require('../../assets/information.png')}
             style={styles.buttonImageIconStyle}
           />
           <View style={styles.buttonIconSeparatorStyle} />
