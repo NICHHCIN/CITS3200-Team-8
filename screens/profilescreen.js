@@ -6,6 +6,7 @@ import {SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon2 from 'react-native-vector-icons/Ionicons'
 import firebase from 'firebase/compat';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 require('firebase/firestore')
 import {
@@ -98,11 +99,11 @@ const ProfileScreen = () => {
             
         <View style={{flexDirection: 'row', marginTop: 15}}>
 
-        
-          <Avatar.Image 
+        <Ionicons style={styles.buttonImageIconStyle} name={"person-circle-outline"} color={'#3d3d3d'} size={100}/>
+          {/*<Avatar.Image 
             source={require('../assets/profile.jpg')}
             size={100}
-          />
+  />*/}
           <View style={{marginLeft: 20}}>
             <Title style={[styles.title, {
               marginTop:15,

@@ -43,13 +43,11 @@ const App = () => {
           onPress={() => Linking.openURL('tel:000')}
           >
           
-          {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
-          <Text style={styles.buttonTextStyle}>
-          Emergency (Police/Ambulance/Fire) 
+          
+          <Text style={styles.buttonTextStyleEmergency} >
+          Emergency (Police/Ambulance/Fire) <Text  style={styles.buttonTextStyle3Emergency}>{'\n'}000</Text>
           </Text>
-          <Text style={styles.buttonTextStyle3}>
-             000
-          </Text>
+          <Ionicons style={styles.buttonImageIconStyle} name={"play"}/>
           {/*<Image
             source={require('../assets/phone2.png')}
             style={styles.buttonImageIconStyle}
@@ -67,11 +65,9 @@ const App = () => {
           
           {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
           <Text style={styles.buttonTextStyle}>
-          Student administration (Adam)
+          Student administration (Adam)          <Text style={styles.buttonTextStyle3}>{'\n'}048-015-9541</Text>
           </Text>
-          <Text style={styles.buttonTextStyle3} >
-        048-015-9541
-          </Text>
+          <Ionicons style={styles.buttonImageIconStyle} name={"play"}/>
           {/*<Image
             source={require('../assets/phone2.png')}
             style={styles.buttonImageIconStyle}
@@ -91,11 +87,9 @@ const App = () => {
           
           {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
           <Text style={styles.buttonTextStyle}>
-          Doctor (Nick)
+          Doctor (Nick)                                           <Text style={styles.buttonTextStyle3}>{'\n'}048-015-9134</Text>
           </Text>
-          <Text style={styles.buttonTextStyle3}>
-        048-015-9134
-          </Text>
+          <Ionicons style={styles.buttonImageIconStyle} name={"play"}/>
           {/*<Image
             source={require('../assets/phone2.png')}
             style={styles.buttonImageIconStyle}
@@ -111,11 +105,9 @@ const App = () => {
           
           {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
           <Text style={styles.buttonTextStyle}>
-          Plumber (John)
+          Plumber (John)                                       <Text style={styles.buttonTextStyle3}>{'\n'}044-015-9541</Text>
           </Text>
-          <Text style={styles.buttonTextStyle3}>
-        044-015-9541
-          </Text>
+          <Ionicons style={styles.buttonImageIconStyle} name={"play"}/>
           {/*<Image
             source={require('../assets/phone2.png')}
             style={styles.buttonImageIconStyle}
@@ -132,12 +124,9 @@ const App = () => {
           
           {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
           <Text style={styles.buttonTextStyle}>
-          Electrician (Sam) 
+          Electrician (Sam)                                    <Text style={styles.buttonTextStyle3}>{'\n'}041-315-9541</Text>
           </Text>
-          <Text style={styles.buttonTextStyle3}>
-        041-315-9541
-          </Text>
-
+          <Ionicons style={styles.buttonImageIconStyle} name={"play"}/>
           {/*<Image
             source={require('../assets/phone2.png')}
             style={styles.buttonImageIconStyle}
@@ -155,12 +144,9 @@ const App = () => {
           
           {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
           <Text style={styles.buttonTextStyle}>
-          Site Manager (William) 
+          Site Manager (William)                         <Text style={styles.buttonTextStyle3}>{'\n'}043-215-9541</Text>
           </Text>
-          <Text style={styles.buttonTextStyle3}>
-        043-215-9541
-          </Text>
-
+          <Ionicons style={styles.buttonImageIconStyle} name={"play"}/>
           {/*<Image
             source={require('../assets/phone2.png')}
             style={styles.buttonImageIconStyle}
@@ -176,12 +162,9 @@ const App = () => {
          
           {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
           <Text style={styles.buttonTextStyle}>
-          Cleaner (Byrne) 
+          Cleaner (Byrne)                                       <Text style={styles.buttonTextStyle3}>{'\n'}041-311-5954</Text>
           </Text>
-          <Text style={styles.buttonTextStyle3}>
-        041-311-5954
-          </Text>
-
+          <Ionicons style={styles.buttonImageIconStyle} name={"play"}/>
           {/*<Image
             source={require('../assets/phone2.png')}
             style={styles.buttonImageIconStyle}
@@ -197,12 +180,9 @@ const App = () => {
          
           {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
           <Text style={styles.buttonTextStyle}>
-          Technician (Thomas) 
+          Technician (Thomas)                            <Text style={styles.buttonTextStyle3}>{'\n'}048-015-9547</Text>
           </Text>
-          <Text style={styles.buttonTextStyle3}>
-        048-015-9547
-          </Text>
-
+          <Ionicons style={styles.buttonImageIconStyle} name={"play"}/>
           {/*<Image
             source={require('../assets/phone2.png')}
             style={styles.buttonImageIconStyle}
@@ -217,13 +197,9 @@ const App = () => {
 
           {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>  */}
           <Text style={styles.buttonTextStyle}>
-          Supervisor (Roberts)      
+          Supervisor (Roberts)                             <Text style={styles.buttonTextStyle3}>{'\n'}048-015-8547</Text>  
           </Text>
-          <Text style={styles.buttonTextStyle3}>
-        048-015-8547
-          </Text>
-
-
+          <Ionicons style={styles.buttonImageIconStyle} name={"play"}/>
           {/*<Image
             source={require('../assets/phone2.png')}
             style={styles.buttonImageIconStyle}
@@ -271,18 +247,37 @@ const styles = StyleSheet.create({
   buttonTextStyle: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginBottom: 4,
+    marginTop: 2,
+    //marginBottom: 25,
     marginLeft: 15,
     fontSize: 18,
+    color: "#5c5c5c",
+  },
+
+  buttonTextStyleEmergency: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginTop: 2,
+    //marginBottom: 25,
+    marginLeft: 15,
+    fontSize: 18,
+    color: "#e61e1e",
   },
 
    buttonTextStyle3: {
-    fontSize: 20,
-    //fontWeight: 'bold',
+    fontSize: 15,
+    fontWeight: 'normal',
     marginBottom: 1,
     marginRight: 10,
-    fontSize: 19,
-    color: '#fff'
+    color: '#5c5c5c'
+  },
+
+  buttonTextStyle3Emergency: {
+    fontSize: 15,
+    fontWeight: 'normal',
+    marginBottom: 1,
+    marginRight: 10,
+    color: '#e61e1e'
   },
 
 
@@ -290,12 +285,21 @@ const styles = StyleSheet.create({
   buttonGPlusStyle: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#0e5480',
-    borderWidth: 0.5,
-    borderColor: '#0e5480',
+    backgroundColor: '#e6e6e6',
+    borderWidth: 1.5,
+    borderColor: '#b5b5b5',
     height: 70,
-    borderRadius: 30 ,
+    borderRadius: 20 ,
     margin: 5,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+
+    elevation: 3,
   },
 
 
@@ -314,15 +318,12 @@ const styles = StyleSheet.create({
 
 
   buttonImageIconStyle: {
-    padding: 10,
-    margin: 25,
-    height: 32,
-    width: 25,
-    resizeMode: 'stretch',
-    
-    marginTop: -100,
+    //padding: 5,
+    //margin: 25,
+    margin: -7,
+    fontSize: 10,
+    color: "#5c5c5c",
   },
-
 
   // buttonTextStyle: {
   //   color: '#F15454#fff',
@@ -333,7 +334,7 @@ const styles = StyleSheet.create({
   
 
 
-
+/*
   buttonTextStyle: {
     fontSize: 15,
     textAlign: 'center',
@@ -347,6 +348,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     margin: 5,
   },
+  */
 
 
 

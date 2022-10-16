@@ -25,6 +25,7 @@ const MyTheme = {
     text: '#FFFFFF',
     border: '#ff962b',
     notification: 'rgb(255, 69, 58)',
+    shadowColor: "#000",
   },
 };
 
