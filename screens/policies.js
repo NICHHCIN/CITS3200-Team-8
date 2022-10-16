@@ -13,20 +13,9 @@ import {
   StyleSheet,
   View,
   Text,
-  Image,
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-
-
-
-
-import * as OpenAnything from "react-native-openanything";
-
-
-
-
-
  
 const Policies = () => {
   const navigation = useNavigation()
