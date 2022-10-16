@@ -44,7 +44,7 @@ export default StyleSheet.create({
     checkmark: {
         textAlign: 'center',
         marginLeft: 25,
-        fontSize: 350,
+        fontSize: 250,
     },
 
     button: {
