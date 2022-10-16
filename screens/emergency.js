@@ -7,6 +7,7 @@
 import {Linking} from 'react-native'
 import React from 'react';
 import { useNavigation } from '@react-navigation/core'
+import Ionicons from 'react-native-vector-icons/Ionicons';
 //import all the components we are going to use
 import {
   SafeAreaView,
@@ -42,19 +43,20 @@ const App = () => {
           onPress={() => Linking.openURL('tel:000')}
           >
           
-          <View style={styles.buttonIconSeparatorStyle} />
+          {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
           <Text style={styles.buttonTextStyle}>
           Emergency (Police/Ambulance/Fire) 
           </Text>
-          <Image
-            source={require('../assets/phone2.png')}
-            style={styles.buttonImageIconStyle}
-          />
-        </TouchableOpacity>
-
-        <Text style={styles.buttonTextStyle3}>
+          <Text style={styles.buttonTextStyle3}>
              000
           </Text>
+          {/*<Image
+            source={require('../assets/phone2.png')}
+            style={styles.buttonImageIconStyle}
+  />*/}
+        </TouchableOpacity>
+
+        
 
 
         <TouchableOpacity
@@ -63,19 +65,20 @@ const App = () => {
           onPress={() => Linking.openURL('tel:048-015-9451')}
            >
           
-          <View style={styles.buttonIconSeparatorStyle} />
+          {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
           <Text style={styles.buttonTextStyle}>
           Student administration (Adam)
           </Text>
-          <Image
-            source={require('../assets/phone2.png')}
-            style={styles.buttonImageIconStyle}
-          />
-          
-        </TouchableOpacity>
-        <Text style={styles.buttonTextStyle3} >
+          <Text style={styles.buttonTextStyle3} >
         048-015-9541
           </Text>
+          {/*<Image
+            source={require('../assets/phone2.png')}
+            style={styles.buttonImageIconStyle}
+/>*/}
+          
+        </TouchableOpacity>
+        
 
 
 
@@ -86,18 +89,19 @@ const App = () => {
           onPress={() => Linking.openURL('tel:048-015-9134')}
            >
           
-          <View style={styles.buttonIconSeparatorStyle} />
+          {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
           <Text style={styles.buttonTextStyle}>
           Doctor (Nick)
           </Text>
-          <Image
-            source={require('../assets/phone2.png')}
-            style={styles.buttonImageIconStyle}
-          />
-        </TouchableOpacity>
-        <Text style={styles.buttonTextStyle3}>
+          <Text style={styles.buttonTextStyle3}>
         048-015-9134
           </Text>
+          {/*<Image
+            source={require('../assets/phone2.png')}
+            style={styles.buttonImageIconStyle}
+/>*/}
+        </TouchableOpacity>
+        
 
         <TouchableOpacity
           style={styles.buttonGPlusStyle}
@@ -105,19 +109,20 @@ const App = () => {
           onPress={() => Linking.openURL('tel:044-015-9541')}
            >
           
-          <View style={styles.buttonIconSeparatorStyle} />
+          {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
           <Text style={styles.buttonTextStyle}>
           Plumber (John)
           </Text>
-          <Image
-            source={require('../assets/phone2.png')}
-            style={styles.buttonImageIconStyle}
-          />
-        </TouchableOpacity>
-
-        <Text style={styles.buttonTextStyle3}>
+          <Text style={styles.buttonTextStyle3}>
         044-015-9541
           </Text>
+          {/*<Image
+            source={require('../assets/phone2.png')}
+            style={styles.buttonImageIconStyle}
+/>*/}
+        </TouchableOpacity>
+
+        
 
         <TouchableOpacity
           style={styles.buttonGPlusStyle}
@@ -125,19 +130,20 @@ const App = () => {
           onPress={() => Linking.openURL('tel:041-315-9541')}
            >
           
-          <View style={styles.buttonIconSeparatorStyle} />
+          {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
           <Text style={styles.buttonTextStyle}>
           Electrician (Sam) 
           </Text>
-          <Image
-            source={require('../assets/phone2.png')}
-            style={styles.buttonImageIconStyle}
-          />
-        </TouchableOpacity>
-        <Text style={styles.buttonTextStyle3}>
+          <Text style={styles.buttonTextStyle3}>
         041-315-9541
           </Text>
 
+          {/*<Image
+            source={require('../assets/phone2.png')}
+            style={styles.buttonImageIconStyle}
+/>*/}
+        </TouchableOpacity>
+        
 
 
 
@@ -147,19 +153,20 @@ const App = () => {
           onPress={() => Linking.openURL('tel:043-215-9541')}
            >
           
-          <View style={styles.buttonIconSeparatorStyle} />
+          {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
           <Text style={styles.buttonTextStyle}>
           Site Manager (William) 
           </Text>
-          <Image
-            source={require('../assets/phone2.png')}
-            style={styles.buttonImageIconStyle}
-          />
-        </TouchableOpacity>
-        <Text style={styles.buttonTextStyle3}>
+          <Text style={styles.buttonTextStyle3}>
         043-215-9541
           </Text>
 
+          {/*<Image
+            source={require('../assets/phone2.png')}
+            style={styles.buttonImageIconStyle}
+/>*/}
+        </TouchableOpacity>
+        
 
         <TouchableOpacity
           style={styles.buttonGPlusStyle}
@@ -167,19 +174,20 @@ const App = () => {
           onPress={() => Linking.openURL('tel:041-311-5954')}
            >
          
-          <View style={styles.buttonIconSeparatorStyle} />
+          {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
           <Text style={styles.buttonTextStyle}>
-          Clearner (Byrne) 
+          Cleaner (Byrne) 
           </Text>
-          <Image
-            source={require('../assets/phone2.png')}
-            style={styles.buttonImageIconStyle}
-          />
-        </TouchableOpacity>
-        <Text style={styles.buttonTextStyle3}>
+          <Text style={styles.buttonTextStyle3}>
         041-311-5954
           </Text>
 
+          {/*<Image
+            source={require('../assets/phone2.png')}
+            style={styles.buttonImageIconStyle}
+/>*/}
+        </TouchableOpacity>
+        
 
         <TouchableOpacity
           style={styles.buttonGPlusStyle}
@@ -187,38 +195,42 @@ const App = () => {
           onPress={() => Linking.openURL('tel:048-015-9547')}
            >
          
-          <View style={styles.buttonIconSeparatorStyle} />
+          {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>*/}
           <Text style={styles.buttonTextStyle}>
           Technician (Thomas) 
           </Text>
-          <Image
-            source={require('../assets/phone2.png')}
-            style={styles.buttonImageIconStyle}
-          />
-        </TouchableOpacity>
-        <Text style={styles.buttonTextStyle3}>
+          <Text style={styles.buttonTextStyle3}>
         048-015-9547
           </Text>
 
+          {/*<Image
+            source={require('../assets/phone2.png')}
+            style={styles.buttonImageIconStyle}
+/>*/}
+        </TouchableOpacity>
+        
         <TouchableOpacity
           style={styles.buttonGPlusStyle}
           activeOpacity={0.5}
           onPress={() => Linking.openURL('tel:048-015-8547')}
           >
+
+          {/*<Ionicons style={styles.buttonImageIconStyle} name={"call"} color={'#FFFFFF'}/>  */}
           <Text style={styles.buttonTextStyle}>
           Supervisor (Roberts)      
           </Text>
-
-          <Image
-            source={require('../assets/phone2.png')}
-            style={styles.buttonImageIconStyle}
-          />
-        </TouchableOpacity>
-
-        <Text style={styles.buttonTextStyle3}>
+          <Text style={styles.buttonTextStyle3}>
         048-015-8547
           </Text>
 
+
+          {/*<Image
+            source={require('../assets/phone2.png')}
+            style={styles.buttonImageIconStyle}
+/>*/}
+        </TouchableOpacity>
+
+        
 
        
 
@@ -259,7 +271,7 @@ const styles = StyleSheet.create({
   buttonTextStyle: {
     fontSize: 24,
     fontWeight: 'bold',
-      marginBottom: 4,
+    marginBottom: 4,
     marginLeft: 15,
     fontSize: 18,
   },
@@ -268,8 +280,9 @@ const styles = StyleSheet.create({
     fontSize: 20,
     //fontWeight: 'bold',
     marginBottom: 1,
-    marginLeft: 77,
+    marginRight: 10,
     fontSize: 19,
+    color: '#fff'
   },
 
 
@@ -277,11 +290,11 @@ const styles = StyleSheet.create({
   buttonGPlusStyle: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#f0f2f3',
+    backgroundColor: '#0e5480',
     borderWidth: 0.5,
-    borderColor: '#f0f2f3',
+    borderColor: '#0e5480',
     height: 70,
-    borderRadius: 18 ,
+    borderRadius: 30 ,
     margin: 5,
   },
 
@@ -319,46 +332,24 @@ const styles = StyleSheet.create({
   // },
   
 
-  buttonFacebookStyle2: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 20,
-  },
+
 
   buttonTextStyle: {
     fontSize: 15,
+    textAlign: 'center',
+    textAlignVertical: 'center',
     color: 'white',
     fontWeight: 'bold',
-    backgroundColor: '#0168a8',
+    backgroundColor: '#5ca1cc',
     borderWidth: 0.5,
-    borderColor: '#fff',
-    height: 110,
-    borderRadius: 18,
+    borderColor: '#5ca1cc',
+    height: 70,
+    borderRadius: 30,
     margin: 5,
   },
 
 
-  buttonFacebookStyle3: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#2196f3',
-    borderWidth: 0.5,
-    borderColor: '#fff',
-    height: 110,
-    borderRadius: 18,
-    margin: 5,
-  },
 
-  buttonFacebookStyle4: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: '#969696',
-    borderWidth: 0.5,
-    borderColor: '#fff',
-    height: 110,
-    borderRadius: 18,
-    margin: 5,
-  },
 
 
 });
