@@ -6,6 +6,7 @@ import {SafeAreaView} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon2 from 'react-native-vector-icons/Ionicons'
 import firebase from 'firebase/compat';
+
 require('firebase/firestore')
 import {
   Avatar,
@@ -16,6 +17,12 @@ import {
 } from 'react-native-paper';
 
 const ProfileScreen = () => {
+  const handleSettings = () => {
+    //Used to navigate to the settings screen
+    navigation.replace("Settings")
+  }
+
+
   var [location, postLocation] = useState([]);
   useEffect(() => {
       firebase.firestore()
@@ -127,7 +134,7 @@ const ProfileScreen = () => {
 
           </View>
         </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
+        <TouchableRipple onPress=  {handleSettings}>
           <View style={styles.menuItem}>
             <Icon2 name="settings-outline" color="#FF6347" size={25}/>
             <Text style={styles.menuItemText}>Settings</Text>

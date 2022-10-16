@@ -67,7 +67,7 @@ export class Main extends Component {
         }
       >
 
-        <Tab.Screen name = "Home" component = {homescreen} />
+        <Tab.Screen name = "Home" component = {HomeScreen} />
         <Tab.Screen name = "Announcements" component = {announcementsscreen} />
         <Tab.Screen name = "Policies" component = {Policies} />
         <Tab.Screen name = "CheckIn" component = {CheckInScreen} />
