@@ -23,6 +23,9 @@ import * as OpenAnything from "react-native-openanything";
 
 import { useNavigation } from '@react-navigation/core'
 
+import firebase from 'firebase/compat';
+import { updateDoc } from 'firebase/firestore';
+require('firebase/firestore') 
 
 var statu=0.0;
 const delay = ms => new Promise(
@@ -34,43 +37,112 @@ const App = () => {
   const navigation = useNavigation()
   const back = "\u2039"
   const [count, setCount] = useState(0);
+  const [data, setData] = useState('0');
+
+  useEffect(() => {
+    firebase.firestore()
+    .collection('users')
+    .doc(firebase.auth().currentUser.uid)
+    .get()
+    .then(function(doc){
+      let data = doc.data().read;
+      if (data == '0') {
+        setData('00000000000000000')
+        doc.update({read: '00000000000000000'});
+      }
+      else setData(data)
+  })
+    if (data[12]+data[13]+data[14]+data[15]+data[16] == '00000') {
+      setCount(0)
+    } 
+    else if (data[12]+data[13]+data[14]+data[15]+data[16] == '10000' || data[12]+data[13]+data[14]+data[15]+data[16] == '00100' || data[12]+data[13]+data[14]+data[15]+data[16] == '01000' || data[12]+data[13]+data[14]+data[15]+data[16] == '00010' || data[12]+data[13]+data[14]+data[15]+data[16] == '00001') {
+      setCount(0.2)
+    }
+    else if (data[12]+data[13]+data[14]+data[15]+data[16] == '01111' || data[12]+data[13]+data[14]+data[15]+data[16] == '11011' || data[12]+data[13]+data[14]+data[15]+data[16] == '10111' || data[12]+data[13]+data[14]+data[15]+data[16] == '11101' || data[12]+data[13]+data[14]+data[15]+data[16] == '11110') {
+      setCount(0.8)
+    }
+    else if (data[12]+data[13]+data[14]+data[15]+data[16] == '01110' || data[12]+data[13]+data[14]+data[15]+data[16] == '01011' || data[12]+data[13]+data[14]+data[15]+data[16] == '00111' || data[12]+data[13]+data[14]+data[15]+data[16] == '11100' || data[12]+data[13]+data[14]+data[15]+data[16] == '10110' || data[12]+data[13]+data[14]+data[15]+data[16] == '11001' || data[12]+data[13]+data[14]+data[15]+data[16] == '11010' || data[12]+data[13]+data[14]+data[15]+data[16] == '10101' || data[12]+data[13]+data[14]+data[15]+data[16] == '10011' || data[12]+data[13]+data[14]+data[15]+data[16] == '01101') {
+      setCount(0.6)
+    }
+    else setCount(0.4)
+  })
+
 
   const onPress = async () => {
-    await delay(1000);
-    setCount(count+0.20);
-
-   
+    if (data[12] == '0') {
+      setCount(count+0.2)
+      if (count == 1){
+        alert('Module Completed')
+      }
+    
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .update({read: data[0]+data[1]+data[2]+data[3]+data[4]+data[5]+data[6]+data[7]+data[8]+data[9]+data[10]+data[11]+'1'+data[13]+data[14]+data[15]+data[16]
+    });
+  }
   };
 
   const onPress0 = async () => {
-    await delay(1000);
-    setCount(count+0.20);
-
-   
+    if (data[13] == '0') {
+      setCount(count+0.2)
+      if (count == 1){
+        alert('Module Completed')
+      }
+    
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .update({read: data[0]+data[1]+data[2]+data[3]+data[4]+data[5]+data[6]+data[7]+data[8]+data[9]+data[10]+data[11]+data[12]+'1'+data[14]+data[15]+data[16]
+    });
+  }
   };
 
 
   const onPress1 = async () => {
+    if (data[14] == '0') {
+      setCount(count+0.2)
+      if (count == 1){
+        alert('Module Completed')
+      }
     
-    await delay(3000);
-    setCount(count+0.20);
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .update({read: data[0]+data[1]+data[2]+data[3]+data[4]+data[5]+data[6]+data[7]+data[8]+data[9]+data[10]+data[11]+data[12]+data[13]+'1'+data[15]+data[16]
+    });
+  }
   };
 
   const onPress2 = async () => {
+    if (data[15] == '0') {
+      setCount(count+0.2)
+      if (count == 1){
+        alert('Module Completed')
+      }
     
-    await delay(3000);
-    setCount(count+0.20);
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .update({read: data[0]+data[1]+data[2]+data[3]+data[4]+data[5]+data[6]+data[7]+data[8]+data[9]+data[10]+data[11]+data[12]+data[13]+data[14]+'1'+data[16]
+    });
+  }
   };
 
   const onPress3 = async () => {
    
+    if (data[16] == '0') {
+      setCount(count+0.2)
+      if (count == 1){
+        alert('Module Completed')
+      }
     
-    setCount(count+0.20);
-    await delay(3000);
-    Alert.alert(
-      'Module Completed'
-   )
-
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .update({read: data[0]+data[1]+data[2]+data[3]+data[4]+data[5]+data[6]+data[7]+data[8]+data[9]+data[10]+data[11]+data[12]+data[13]+data[14]+data[15]+'1'
+    });
+  }
   };
 
 
