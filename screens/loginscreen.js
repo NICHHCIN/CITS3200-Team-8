@@ -80,6 +80,22 @@ const LoginScreen = () => {
         >
           <Text style={styles.buttonOutlineText}>Register</Text>
         </TouchableOpacity> */}
+
+        {/* /* At the bottom of the screen, add a link to contact admin, and a link to forgot password */ }
+        <TouchableOpacity
+          onPress={() => navigation.navigate("ForgotPassword ?")}
+          style={[styles.button, styles.buttonOutline]}
+        > 
+          <Text style={styles.buttonOutlineText}>Forgot Password</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("ContactAdmin")}
+          style={[styles.button, styles.buttonOutline]}
+        >
+          <Text style={styles.buttonOutlineText}>Contact Admin</Text>
+        </TouchableOpacity>
+
+    
       </View>
     </KeyboardAvoidingView>
   )

@@ -27,6 +27,26 @@ const ProfileScreen = () => {
         postLocation(location)
       })
     })
+  
+  const handleSupport = () => {
+    // Open a popup to redirect user to email link
+    Alert.alert(
+      'Support',
+      'Please email us at admin@wacrh.com for any support issues.',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        {text: 'Send Email', onPress: () => Linking.openURL('mailto:admin@wacrh.com.au')},
+      ],
+      {cancelable: false},
+    );
+  }
+  
+
+
   const navigation = useNavigation()
   const [showBox, setShowBox] = useState(true);
   const showConfirmDialog = () => {
@@ -63,7 +83,11 @@ const ProfileScreen = () => {
     <SafeAreaView style={styles.container}>
 
       <View style={styles.userInfoSection}>
+        {/* Heading that says welcome to WACRH */}
+            
         <View style={{flexDirection: 'row', marginTop: 15}}>
+
+        
           <Avatar.Image 
             source={require('../assets/profile.jpg')}
             size={100}
@@ -96,11 +120,11 @@ const ProfileScreen = () => {
       
 
       <View style={styles.menuWrapper}>
-       
-        <TouchableRipple onPress={() => {}}>
+        <TouchableRipple on onPress={handleSupport}>  
           <View style={styles.menuItem}>
             <Icon name="account-check-outline" color="#FF6347" size={25}/>
             <Text style={styles.menuItemText}>Support</Text>
+
           </View>
         </TouchableRipple>
         <TouchableRipple onPress={() => {}}>
