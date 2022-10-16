@@ -17,6 +17,7 @@ import {
 
 const ProfileScreen = () => {
   var [location, postLocation] = useState([]);
+  var [name, postName] = useState([]);
   useEffect(() => {
       firebase.firestore()
       .collection('users')
@@ -24,7 +25,10 @@ const ProfileScreen = () => {
       .get()
       .then(function(doc){
         let location = doc.data().CurrentLocation;
+        let fname = doc.data().FirstName;
+        let lname = doc.data().LastName;
         postLocation(location)
+        postName(fname+ ' ' + lname)
       })
     })
   
@@ -96,7 +100,7 @@ const ProfileScreen = () => {
             <Title style={[styles.title, {
               marginTop:15,
               marginBottom: 5,
-            }]}>John Doe</Title>
+            }]}>{name}</Title>
             <Caption style={styles.caption}>Work Title</Caption>
           </View>
         </View>
@@ -109,7 +113,7 @@ const ProfileScreen = () => {
         </View>
         <View style={styles.row}>
           <Icon name="phone" color="#777777" size={20}/>
-          <Text style={styles.infoText}>+61412356789</Text>
+          <Text style={styles.infoText}>{name}</Text>
         </View>
         <View style={styles.row}>
           <Icon name="email" color="#777777" size={20}/>

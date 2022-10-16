@@ -3,7 +3,10 @@ import React, {useState} from 'react';
 import styles from './styles/checkin.style';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { iOSUIKit } from 'react-native-typography'
-  
+
+import firebase from 'firebase/compat'
+require('firebase/firestore')
+
 export default function CheckInScreen() {
   const [checkedIn, setCheckedIn] = useState(false);
   const [checkedOut, setCheckedOut] = useState(false);
@@ -35,7 +38,10 @@ export default function CheckInScreen() {
             onPress={() => {
               setCheckedIn(false);
               setCheckedOut(true);
-
+              firebase.firestore()
+              .collection('users')
+              .doc(firebase.auth().currentUser.uid)
+              .update({CheckedOut: true, CheckedIn: false});
               setCheckOutDate(new Date().toLocaleDateString());
 
             }}
@@ -55,7 +61,10 @@ export default function CheckInScreen() {
             onPress={() => {
               setCheckedIn(true);
               setCheckInDate(new Date().toLocaleDateString());
-
+              firebase.firestore()
+              .collection('users')
+              .doc(firebase.auth().currentUser.uid)
+              .update({CheckedIn: true, CheckedOut: false});
             }}
           />
         </View>
