@@ -12,19 +12,21 @@ export default function CheckInScreen() {
   const [checkedOut, setCheckedOut] = useState(false);
   const [ checkInDate, setCheckInDate] = useState(new Date().toLocaleDateString());
   const [ checkOutDate, setCheckOutDate] = useState(new Date().toLocaleDateString());
-  const [name, setName] = useState("John Doe");
-  const location = "Port Hedland";
   const expectedcheckout = "22/08/2022";
   
+  var [location, postLocation] = useState([]);
+  var [name, postName] = useState([]);
   useEffect(() => {
       firebase.firestore()
       .collection('users')
       .doc(firebase.auth().currentUser.uid)
       .get()
       .then(function(doc){
+        let location = doc.data().CurrentLocation;
         let fname = doc.data().FirstName;
         let lname = doc.data().LastName;
-        setName(fname+ ' ' + lname)
+        postLocation(location)
+        postName(fname+ ' ' + lname)
       })
     })
 
