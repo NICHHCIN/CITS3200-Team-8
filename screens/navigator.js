@@ -7,10 +7,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Profile from './profilescreen' 
 import Emergency from './emergency';
 import CheckInScreen from './checkin';
-
-
-import HomeScreen from './HomeScreen';
-
 import Policies from './policies';
 import announcementsscreen from './announcementsscreen';
 
@@ -40,9 +36,10 @@ export class Main extends Component {
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
-            if (route.name === 'Home') {
-              iconName = focused ? 'home-sharp' : 'home-outline';
-            } else if (route.name === 'Announcements') {
+            if (route.name === 'Policies') {
+              iconName = focused ? 'book-sharp' : 'book-outline';
+            } 
+            else if (route.name === 'Announcements') {
               iconName = focused ? 'megaphone-sharp' : 'megaphone-outline';
             } else if (route.name === 'Emergency') {
               iconName = focused ? 'call-sharp' : 'call-outline';
@@ -50,8 +47,6 @@ export class Main extends Component {
               iconName = focused ? 'toggle-sharp' : 'toggle-outline';
             } else if (route.name === 'Profile') {
               iconName = focused ? 'person-circle-sharp' : 'person-circle-outline';
-            } else if (route.name === 'Policies') {
-              iconName = focused ? 'book-sharp' : 'book-outline';
             } 
 
             // You can return any component that you like here!
@@ -68,7 +63,7 @@ export class Main extends Component {
         }
       >
 
-        <Tab.Screen name = "Home" component = {HomeScreen} />
+        
         <Tab.Screen name = "Announcements" component = {announcementsscreen} />
         <Tab.Screen name = "Policies" component = {Policies} />
         <Tab.Screen name = "CheckIn" component = {CheckInScreen} />
