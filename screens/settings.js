@@ -11,7 +11,7 @@ import { useIsFocused } from '@react-navigation/native';
 
 
 export default function SettingsScreen() {
-
+    const back = "\u2039"
     const navigation = useNavigation()
 
     const [email, setEmail] = useState('')
@@ -51,12 +51,17 @@ export default function SettingsScreen() {
 
 
         <View style={styles.heading}>
-            <TouchableOpacity
-                style={styles.back}
-                onPress={() => navigation.goBack()}
-            >
-                <Text style={styles.backText}>Back</Text>
-            </TouchableOpacity>
+            <TouchableOpacity 
+       
+       activeOpacity={0.5}
+       onPress={() => navigation.navigate('Main')}//,{replace:true})}
+       
+       >
+
+      <Text style={styles.buttonTextStyle13}>
+          { back + "\n"}
+          </Text>
+          </TouchableOpacity>
 
 
             <Text style={styles.title}>Settings</Text>
@@ -227,5 +232,12 @@ const styles = StyleSheet.create({
         textAlign: 'center',
 
     },
+    buttonTextStyle13: {
+        fontSize: 27,
+        fontWeight: "bold",
+        textAlign:'left',
+        marginLeft: "4%"
+      },
+    
 
 });

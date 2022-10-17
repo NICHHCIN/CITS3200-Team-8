@@ -12,6 +12,7 @@ import App4 from './screens/Policies Pages/popart4';
 import App5 from './screens/Policies Pages/popart5';
 import App13 from './screens/policies';
 import SettingsScreen from './screens/settings';
+import Policies from './screens/policies';
 const Stack = createNativeStackNavigator()
 
 const MyTheme = {
@@ -34,6 +35,7 @@ function App() {
           <Stack.Screen options={{ headerShown: false}} name="Login" component={loginscreen} />
           <Stack.Screen options={{ headerShown: false}} name="ForgotPassword" component={ForgotPasswordScreen} />
           <Stack.Screen options={{ headerShown: false}} name="Main" component={Main} />
+          <Stack.Screen options={{ headerShown: false}} name="Plot" component={Policies} />
           <Stack.Screen options={{ headerShown: false}} name = "PSpart1" component = {App1} />
         <Stack.Screen options={{ headerShown: false}} name = "PSpart2" component = {App2} />
         <Stack.Screen options={{ headerShown: false}} name = "Settings" component = {SettingsScreen} />

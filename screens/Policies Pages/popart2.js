@@ -122,10 +122,7 @@ const App = () => {
        
        activeOpacity={0.5}
        //onPress={() => navigation.navigate('Policies')}
-       onPress={() => navigation.navigate('App', {
-        screen: 'Policies',
-        initial: false,
-      })}
+       onPress={() => navigation.navigate('Main')}
        
       >
       <Text style={styles.buttonTextStyle13}>
@@ -149,7 +146,7 @@ const App = () => {
 
          
           
-          <Progress.Bar progress={count} width={370} />
+          <Progress.Bar progress={count} width={360} />
 
 
         

@@ -81,6 +81,8 @@ const App1 = () => {
 
   const onPress1 = async () => {
     OpenAnything.Pdf('https://drive.google.com/file/d/11g1Y2wXOMvAncf3cEOxxYtb321LuoxzD/view?usp=sharing')
+    setCount1(count1+0.5)
+    
     if (data[1] == '0') {
       setCount1(count1+0.5)
       if (count1 == 1){
@@ -145,7 +147,7 @@ const App1 = () => {
 
          
           
-          <Progress.Bar progress={count1} width={370} />
+          <Progress.Bar progress={count1} width={360} />
 
 
         

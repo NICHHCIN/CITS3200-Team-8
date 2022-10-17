@@ -144,7 +144,7 @@ const App = () => {
       <TouchableOpacity 
        
        activeOpacity={0.5}
-       onPress={() => navigation.navigate('Policies',{replace:true})}
+       onPress={() => navigation.navigate('Main')}//,{replace:true})}
        >
       <Text style={styles.buttonTextStyle13}>
           { back + "\n"}

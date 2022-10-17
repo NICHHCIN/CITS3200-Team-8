@@ -126,7 +126,7 @@ const App = () => {
       <TouchableOpacity 
        
        activeOpacity={0.5}
-       onPress={() => navigation.navigate('Polic',{replace:true})}
+       onPress={() => navigation.navigate('Main')}
        >
       <Text style={styles.buttonTextStyle13}>
           { back + "\n"}
@@ -149,7 +149,7 @@ const App = () => {
 
          
           
-          <Progress.Bar progress={count} width={370} />
+          <Progress.Bar progress={count} width={360} />
 
 
         
