@@ -167,7 +167,7 @@ const App = () => {
 
          
           
-          <Progress.Bar progress={count} width={370} />
+          <Progress.Bar progress={count} width={360} />
 
 
         
