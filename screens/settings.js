@@ -20,37 +20,30 @@ export default function SettingsScreen() {
 
     const [newPassword, setNewPassword] = useState('')
 
-    const [newPassword1, setNewPassword1] = useState('')
 
     const isFocused = useIsFocused();
 
     const handleUpdatePassword = () => {
-
-        // Check if the email exists in the firebase database
-
-        //confirm new password and new password1 are the same if not alert user to enter the same password
-        
-        if (newPassword != newPassword1) {
-            alert('Passwords do not match')
-        } else {
-
-            auth
-
-            .signInWithEmailAndPassword(email, password)
-
+        auth.currentUser.updatePassword(newPassword)
             .then(() => {
-
-                auth.currentUser.updatePassword(newPassword)
-
-                alert('Password has been updated!')
-
-                navigation.navigate("Login")
-
+                alert('Password updated!')
             })
 
-            .catch(error => alert(error.message))
-        }
     }
+
+    useEffect(() => {
+        if (isFocused) {
+            const unsubscribe = auth.onAuthStateChanged(user => {
+                if (user) {
+                    setEmail(user.email)
+
+                }
+            })
+            return unsubscribe
+        }
+    }, [isFocused])
+
+    
 
     return (
                
@@ -98,29 +91,13 @@ export default function SettingsScreen() {
 
                 secureTextEntry={true}
 
-                onChangeText={text => setNewPassword1(text)}
+                onChangeText={text => setNewPassword(text)}
 
                 value={newPassword}
 
             />
 
         
-            
-            <Text style={styles.text}>Confirm New Password.</Text>
-
-            <TextInput
-
-                style={styles.input}
-
-                placeholder='Confirm New Password'
-
-                secureTextEntry={true}
-
-                onChangeText={text => setNewPassword(text)} 
-                
-                value={newPassword}
-                
-            />
         
 
 
