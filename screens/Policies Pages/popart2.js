@@ -106,6 +106,10 @@ const App = () => {
         alert('Module Completed')
       }
     }
+
+    if (count1 == 1){
+      alert('Module Completed')
+    }
 };
 
 
@@ -117,7 +121,12 @@ const App = () => {
       <TouchableOpacity 
        
        activeOpacity={0.5}
-       onPress={() => navigation.navigate('Policies')}
+       //onPress={() => navigation.navigate('Policies')}
+       onPress={() => navigation.navigate('App', {
+        screen: 'Policies',
+        initial: false,
+      })}
+       
       >
       <Text style={styles.buttonTextStyle13}>
           { back + "\n"}

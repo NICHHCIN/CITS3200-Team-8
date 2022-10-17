@@ -107,6 +107,9 @@ const App = () => {
       .update({read: data[0]+data[1]+data[2]+data[3]+data[4]+data[5]+data[6]+data[7]+data[8]+data[9]+data[10]+'1'+data[12]+data[13]+data[14]+data[15]+data[16]
     });
   }
+  if (count1 == 1){
+    alert('Module Completed')
+  }
   };
 
 
@@ -123,7 +126,7 @@ const App = () => {
       <TouchableOpacity 
        
        activeOpacity={0.5}
-       onPress={() => navigation.navigate('Policies',{replace:true})}
+       onPress={() => navigation.navigate('Polic',{replace:true})}
        >
       <Text style={styles.buttonTextStyle13}>
           { back + "\n"}
