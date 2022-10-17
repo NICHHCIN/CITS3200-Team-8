@@ -22,6 +22,26 @@ import {
 //import AnimatedWeather from 'react-native-animated-weather';
 
 const HomeScreen = () => {
+
+  var [data, postData] = useState([]);
+  useEffect(() => {
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .get()
+      .then(function(doc){
+        let data = doc.data().read;
+        postData(data)
+      })
+    })
+  if (data == '0') {
+    firebase.firestore()
+    .collection('users')
+    .doc(firebase.auth().currentUser.uid)
+    .update({read: '00000000000000000'});
+  }
+
+
   var [location, postLocation] = useState([]);
   var [name, postName] = useState([]);
   useEffect(() => {
