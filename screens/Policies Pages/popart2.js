@@ -78,7 +78,7 @@ const App = () => {
   const onPress1 = async () => {
     
     if (data[3] == '0') {
-      setCount(count+(1/3))
+      setCount(count+0)//(1/3))
       if (count == 1){
         alert('Module Completed')
       }
@@ -92,7 +92,7 @@ const App = () => {
   };
 
   const onPress3 = async () => {
-    OpenAnything.Pdf('https://drive.google.com/file/d/1X2v1_fYHMQJsfkhOzQpfhZqxxagyV_wT/view?usp=sharing');
+    OpenAnything.Pdf('https://drive.google.com/file/d/1pXv5wAhiVxdrR_NCjAmhoaEm0v6SpMI0/view?usp=sharing');
     
     if (data[4] == '0') {
     
@@ -117,7 +117,7 @@ const App = () => {
       <TouchableOpacity 
        
        activeOpacity={0.5}
-       onPress={() => navigation.navigate('Policies',{replace:true})}
+       onPress={() => navigation.navigate('Policies')}
       >
       <Text style={styles.buttonTextStyle13}>
           { back + "\n"}

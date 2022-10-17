@@ -17,7 +17,7 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-
+import * as OpenAnything from "react-native-openanything";
 import { useNavigation } from '@react-navigation/core'
 
 import firebase from 'firebase/compat';
@@ -61,6 +61,8 @@ const App = () => {
 
 
   const onPress = async () => {
+    OpenAnything.Pdf('https://drive.google.com/file/d/1Yo0WrgZkL6gIOVlmlDjXz3WyFgY11Fvl/view?usp=sharing');
+
     if (data[12] == '0') {
       setCount(count+0.2)
       if (count == 1){
@@ -76,6 +78,8 @@ const App = () => {
   };
 
   const onPress0 = async () => {
+    OpenAnything.Pdf('https://drive.google.com/file/d/1WAZY8CnUzUGNotG2aCkLsdQalo-A0-r6/view?usp=sharing');
+
     if (data[13] == '0') {
       setCount(count+0.2)
       if (count == 1){
@@ -92,6 +96,8 @@ const App = () => {
 
 
   const onPress1 = async () => {
+    OpenAnything.Pdf('https://drive.google.com/file/d/1r_lXdNAiX8sLPP3-c9b7kD9O0cTWxUMn/view?usp=sharing');
+
     if (data[14] == '0') {
       setCount(count+0.2)
       if (count == 1){
@@ -107,6 +113,8 @@ const App = () => {
   };
 
   const onPress2 = async () => {
+    OpenAnything.Pdf('https://drive.google.com/file/d/1aYPdi9rodQaWwDOjm56mnC0Yer6f3M5H/view?usp=sharing');
+
     if (data[15] == '0') {
       setCount(count+0.2)
       if (count == 1){
@@ -122,7 +130,8 @@ const App = () => {
   };
 
   const onPress3 = async () => {
-   
+    OpenAnything.Pdf('https://drive.google.com/file/d/1KCkRZItv-FuKVIPDs1J5P4LfBZxRzv2Y/view?usp=sharing');
+
     if (data[16] == '0') {
       setCount(count+0.2)
       if (count == 1){

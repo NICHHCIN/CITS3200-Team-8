@@ -17,7 +17,7 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-
+import * as OpenAnything from "react-native-openanything";
 import { useNavigation } from '@react-navigation/core'
 
 import firebase from 'firebase/compat';
@@ -62,7 +62,10 @@ const App = () => {
 
 
   const onPress = async () => {
+    OpenAnything.Pdf('https://drive.google.com/file/d/1y9r93E5WKt114x8_K-vyrpBjjS7QMEsb/view?usp=sharing');
+
     if (data[5] == '0') {
+
       setCount(count+0.25)
       if (count == 1){
         alert('Module Completed')

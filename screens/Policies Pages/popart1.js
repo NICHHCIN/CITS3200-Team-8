@@ -65,7 +65,8 @@ const App1 = () => {
     })
 
   const onPress =  () => {
-    OpenAnything.Pdf('https://drive.google.com/file/d/11g1Y2wXOMvAncf3cEOxxYtb321LuoxzD/view?usp=sharing')
+
+    OpenAnything.Pdf('https://drive.google.com/file/d/1hBLX6byTOGh4PDC35A2aKMQ9qoi7qjN1/view?usp=sharing')
     if (data[0] == '0') {
       firebase.firestore()
       .collection('users')
@@ -115,7 +116,7 @@ const App1 = () => {
       <TouchableOpacity 
        
        activeOpacity={0.5}
-       onPress={() => navigation.navigate('Policies',{replace:true})}
+       onPress={() => navigation.navigate('Policies')}//,{replace:true})}
        
        >
       <Text style={styles.buttonTextStyle13}>

@@ -17,7 +17,7 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-
+import * as OpenAnything from "react-native-openanything";
 import { useNavigation } from '@react-navigation/core'
 
 import firebase from 'firebase/compat';
@@ -59,6 +59,8 @@ const App = () => {
 
   
   const onPress = async () => {
+    OpenAnything.Pdf('https://drive.google.com/file/d/1vIhinEU91Ayuocf0T7Zoo2rFeHFLz8Ar/view?usp=sharing');
+
     if (data[9] == '0') {
       setCount(count+(1/3))
       if (count == 1){
@@ -74,7 +76,8 @@ const App = () => {
   };
 
   const onPress1 = async () => {
-    
+    OpenAnything.Pdf('https://drive.google.com/file/d/1bU1Hze71yYt5p1qD6tsUHYu8ktaUFeyX/view?usp=sharing');
+
     if (data[10] == '0') {
       setCount(count+(1/3))
       if (count == 1){
@@ -90,7 +93,8 @@ const App = () => {
   };
 
   const onPress3 = async () => {
-   
+    OpenAnything.Pdf('https://drive.google.com/file/d/1o-0NQ7de17ngx7r6adh_K3snGILTvWsx/view?usp=sharing');
+
     if (data[11] == '0') {
       setCount(count+(1/3))
       if (count == 1){
