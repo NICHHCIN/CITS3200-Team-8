@@ -63,9 +63,9 @@ export class Main extends Component {
         }
       >
 
-        
-        <Tab.Screen name = "Announcements" component = {announcementsscreen} />
         <Tab.Screen name = "Policies" component = {Policies} />
+        <Tab.Screen name = "Announcements" component = {announcementsscreen} />
+        
         <Tab.Screen name = "CheckIn" component = {CheckInScreen} />
         <Tab.Screen name= "Emergency" component={Emergency} />         
         <Tab.Screen name = "Profile" component = {Profile} />
