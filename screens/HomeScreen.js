@@ -22,7 +22,42 @@ import {
 //import AnimatedWeather from 'react-native-animated-weather';
 
 const HomeScreen = () => {
-  const location = "Perth";
+
+  var [data, postData] = useState([]);
+  useEffect(() => {
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .get()
+      .then(function(doc){
+        let data = doc.data().read;
+        postData(data)
+      })
+    })
+  if (data == '0') {
+    firebase.firestore()
+    .collection('users')
+    .doc(firebase.auth().currentUser.uid)
+    .update({read: '00000000000000000'});
+  }
+
+
+  var [location, postLocation] = useState([]);
+  var [name, postName] = useState([]);
+  useEffect(() => {
+      firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .get()
+      .then(function(doc){
+        let location = doc.data().CurrentLocation;
+        let fname = doc.data().FirstName;
+        let lname = doc.data().LastName;
+        postLocation(location)
+        postName(fname+ ' ' + lname)
+      })
+    })
+
   const [weather, setWeather] = useState("CLEAR_DAY");
   const [temperature, setTemperature] = useState(0);
 
@@ -52,7 +87,7 @@ const HomeScreen = () => {
             <Title style={[styles.title, {
               marginTop: 15,
               marginBottom: 5,
-            }]}>John Doe</Title>
+            }]}>{name}</Title>
             <Caption style={styles.caption}>{location}</Caption>
           </View>
         </View>

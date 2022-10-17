@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, ImageBackground} from 'react-native';
+import { StyleSheet, Text, View, Button, ImageBackground, Alert, Linking} from 'react-native';
 import React, {useState, useEffect} from 'react';
 import styles from './styles/checkin.style';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -12,19 +12,23 @@ export default function CheckInScreen() {
   const [checkedOut, setCheckedOut] = useState(false);
   const [ checkInDate, setCheckInDate] = useState(new Date().toLocaleDateString());
   const [ checkOutDate, setCheckOutDate] = useState(new Date().toLocaleDateString());
-  const [name, setName] = useState("John Doe");
-  const location = "Port Hedland";
-  const expectedcheckout = "22/08/2022";
   
+  var [location, postLocation] = useState([]);
+  var [name, postName] = useState([]);
+  var [expectedcheckout, postExpectedCheckOut] = useState([]);
+
   useEffect(() => {
       firebase.firestore()
       .collection('users')
       .doc(firebase.auth().currentUser.uid)
       .get()
       .then(function(doc){
+        let location = doc.data().CurrentLocation;
         let fname = doc.data().FirstName;
         let lname = doc.data().LastName;
-        setName(fname+ ' ' + lname)
+        postLocation(location)
+        postName(fname+ ' ' + lname)
+        postExpectedCheckOut(expectedcheckout)
       })
     })
 
@@ -52,12 +56,28 @@ export default function CheckInScreen() {
               firebase.firestore()
               .collection('users')
               .doc(firebase.auth().currentUser.uid)
-              .update({CheckedOut: true, CheckedIn: false});
+              .update({CheckedOut: true, CheckedIn: false, CheckOutDate: new Date().toLocaleDateString()});
               setCheckOutDate(new Date().toLocaleDateString());
-
+              //show an alert to show that the user has checked out, add a button to the alert to go to the home screen
+              Alert.alert(
+                "You have checked out",
+                "You have checked out of " + location + " on " + checkOutDate,
+                [
+                  {
+                    text: "Take Survey",
+                    onPress: () => Linking.openURL('https://form.jotform.com/222890889835879')
+                  },
+                  {
+                    text: "Close",
+                    onPress: () => console.log("Cancel Pressed"),
+                    style: "cancel"
+                  },
+                ],
+                { cancelable: false }
+              );
             }}
-
           />
+ 
         </View>
       ) : (
         <View>
