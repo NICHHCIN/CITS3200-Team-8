@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "my-app",
+    "name": "WACRH-Student-App",
     "slug": "my-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/logo_app.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -18,13 +18,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.wacrh.studentapp"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/logo_app.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.wacrh.studentapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
